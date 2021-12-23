@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.13.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.conference.ConferenceRequest">
+            <fields>
+                <field type="STRING" length="255" name="employeeName" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="employeeSurname" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="price" nullable="false" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dateTime" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isCourse" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isOnline" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="maxBugdetForAccommodation" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="maxBugetForTransport" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isAccepted" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="explanation" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.Equipment">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.equipment.EquipmentType" fetchType="LAZY" name="type" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="quantity" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.EquipmentPurchaseRequest">
+            <fields>
+                <field type="STRING" length="255" name="employeeName" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="employeeSurname" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.equipment.Equipment" fetchType="LAZY" name="equipment" nullable="true" collection="true"/>
+                <field type="DOUBLE" length="255" name="maxBudget" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isAccepted" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="explanation" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.EquipmentType">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.Warehouse">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.equipment.WarehouseEquipment" fetchType="LAZY" name="equipments" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.WarehouseEquipment">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.equipment.EquipmentType" fetchType="LAZY" name="type" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="availableQuantity" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.jobapplication.InterviewResult">
+            <fields>
+                <field type="BOOLEAN" length="255" name="recommendation" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="grade" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="description" nullable="false" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.jobapplication.InterviewType" fetchType="LAZY" name="type" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.jobapplication.InterviewTerm">
+            <fields>
+                <field type="LOCALDATETIME" length="255" name="dateTime" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.jobapplication.InterviewType">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.jobapplication.JobApplication">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="surname" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="address" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="gradeOfEducation" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="cv" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="letter" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.jobapplication.InterviewTerm" fetchType="LAZY" name="potentialInterviewTerms" nullable="true" collection="true"/>
+                <relationField type="AGGREGATION" reference="com.company.model.jobapplication.InterviewTerm" fetchType="LAZY" name="choosenInterviewTerm" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.jobapplication.InterviewResult" fetchType="LAZY" name="interviewResults" nullable="true" collection="true"/>
+                <field type="BOOLEAN" length="255" name="isAccepted" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
