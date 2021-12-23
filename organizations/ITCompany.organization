@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="ITCompany">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="applicant.one">
+      <firstName>Applicant</firstName>
+      <lastName>One</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="applicant.two">
+      <firstName>Applicant</firstName>
+      <lastName>Two</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="applicant.three">
+      <firstName>Applicant</firstName>
+      <lastName>Three</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="supplier.one">
+      <firstName>Supplier</firstName>
+      <lastName>One</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="supplier.two">
+      <firstName>Supplier</firstName>
+      <lastName>Two</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="supplier.three">
+      <firstName>Supplier</firstName>
+      <lastName>Three</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="hr.manager">
+      <firstName>HR</firstName>
+      <lastName>Manager</lastName>
+      <manager>employee.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="hr.one">
+      <firstName>HR</firstName>
+      <lastName>One</lastName>
+      <manager>hr.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="hr.two">
+      <firstName>HR</firstName>
+      <lastName>Two</lastName>
+      <manager>hr.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="procurement.manager">
+      <firstName>Procurement</firstName>
+      <lastName>Manager</lastName>
+      <manager>employee.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="procurement.one">
+      <firstName>Procurement</firstName>
+      <lastName>One</lastName>
+      <manager>procurement.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="procurement.two">
+      <firstName>Procurement</firstName>
+      <lastName>Two</lastName>
+      <manager>procurement.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="finance.manager">
+      <firstName>Finance</firstName>
+      <lastName>Manager</lastName>
+      <manager>employee.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="finance.one">
+      <firstName>Finance</firstName>
+      <lastName>One</lastName>
+      <manager>finance.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="finance.two">
+      <firstName>Finance</firstName>
+      <lastName>Two</lastName>
+      <manager>finance.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="general.manager">
+      <firstName>General</firstName>
+      <lastName>Manager</lastName>
+      <manager>employee.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="general.one">
+      <firstName>General</firstName>
+      <lastName>One</lastName>
+      <manager>general.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="general.two">
+      <firstName>General</firstName>
+      <lastName>Two</lastName>
+      <manager>general.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="technical.manager">
+      <firstName>Technical</firstName>
+      <lastName>Manager</lastName>
+      <manager>employee.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="technical.one">
+      <firstName>Technical</firstName>
+      <lastName>One</lastName>
+      <manager>technical.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="technical.two">
+      <firstName>Technical</firstName>
+      <lastName>Two</lastName>
+      <manager>technical.manager</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="employee.manager">
+      <firstName>Employee</firstName>
+      <lastName>Manager</lastName>
+      <manager>company.director</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="company.director">
+      <firstName>Company</firstName>
+      <lastName>Director</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Member">
+      <displayName>Member</displayName>
+    </role>
+    <role name="Manager">
+      <displayName>Manager</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Company">
+      <displayName>Company</displayName>
+    </group>
+    <group name="Applicant" parentPath="/Company">
+      <displayName>Applicant</displayName>
+    </group>
+    <group name="Supplier" parentPath="/Company">
+      <displayName>Supplier</displayName>
+    </group>
+    <group name="Employee" parentPath="/Company">
+      <displayName>Employee</displayName>
+    </group>
+    <group name="HR" parentPath="/Company/Employee">
+      <displayName>HR</displayName>
+    </group>
+    <group name="Procurement" parentPath="/Company/Employee">
+      <displayName>Procurement</displayName>
+    </group>
+    <group name="Finance" parentPath="/Company/Employee">
+      <displayName>Finance</displayName>
+    </group>
+    <group name="General" parentPath="/Company/Employee">
+      <displayName>General</displayName>
+    </group>
+    <group name="Technical" parentPath="/Company/Employee">
+      <displayName>Technical</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>applicant.one</userName>
+      <roleName>Member</roleName>
+      <groupName>Applicant</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>applicant.two</userName>
+      <roleName>Member</roleName>
+      <groupName>Applicant</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>applicant.three</userName>
+      <roleName>Member</roleName>
+      <groupName>Applicant</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>supplier.one</userName>
+      <roleName>Member</roleName>
+      <groupName>Supplier</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>supplier.two</userName>
+      <roleName>Member</roleName>
+      <groupName>Supplier</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>supplier.three</userName>
+      <roleName>Member</roleName>
+      <groupName>Supplier</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>hr.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>HR</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>hr.one</userName>
+      <roleName>Member</roleName>
+      <groupName>HR</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>hr.two</userName>
+      <roleName>Member</roleName>
+      <groupName>HR</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>procurement.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>Procurement</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>procurement.one</userName>
+      <roleName>Member</roleName>
+      <groupName>Procurement</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>procurement.two</userName>
+      <roleName>Member</roleName>
+      <groupName>Procurement</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>finance.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>Finance</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>finance.one</userName>
+      <roleName>Member</roleName>
+      <groupName>Finance</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>finance.two</userName>
+      <roleName>Member</roleName>
+      <groupName>Finance</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>general.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>General</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>general.one</userName>
+      <roleName>Member</roleName>
+      <groupName>General</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>general.two</userName>
+      <roleName>Member</roleName>
+      <groupName>General</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>technical.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>Technical</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>technical.one</userName>
+      <roleName>Member</roleName>
+      <groupName>Technical</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>technical.two</userName>
+      <roleName>Member</roleName>
+      <groupName>Technical</groupName>
+      <groupParentPath>/Company/Employee</groupParentPath>
+    </membership>
+    <membership>
+      <userName>employee.manager</userName>
+      <roleName>Manager</roleName>
+      <groupName>Employee</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>company.director</userName>
+      <roleName>Manager</roleName>
+      <groupName>Company</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
