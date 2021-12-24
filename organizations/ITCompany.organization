@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="ITCompany">
-  <customUserInfoDefinitions/>
+  <customUserInfoDefinitions>
+    <customUserInfoDefinition>
+      <name>seniority</name>
+      <description></description>
+    </customUserInfoDefinition>
+    <customUserInfoDefinition>
+      <name>languages</name>
+      <description></description>
+    </customUserInfoDefinition>
+  </customUserInfoDefinitions>
   <users>
     <user userName="applicant.one">
       <firstName>Applicant</firstName>
@@ -8,7 +17,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="applicant.two">
       <firstName>Applicant</firstName>
@@ -16,7 +34,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="applicant.three">
       <firstName>Applicant</firstName>
@@ -24,7 +51,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="supplier.one">
       <firstName>Supplier</firstName>
@@ -32,7 +68,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="supplier.two">
       <firstName>Supplier</firstName>
@@ -40,7 +85,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="supplier.three">
       <firstName>Supplier</firstName>
@@ -48,7 +102,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="hr.manager">
       <firstName>HR</firstName>
@@ -57,7 +120,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>GERMAN</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="hr.one">
       <firstName>HR</firstName>
@@ -66,7 +138,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>ENGLISH,FRENCH</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="hr.two">
       <firstName>HR</firstName>
@@ -75,7 +156,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>ENGLISH,GERMAN</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="procurement.manager">
       <firstName>Procurement</firstName>
@@ -84,7 +174,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="procurement.one">
       <firstName>Procurement</firstName>
@@ -93,7 +192,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="procurement.two">
       <firstName>Procurement</firstName>
@@ -102,7 +210,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="finance.manager">
       <firstName>Finance</firstName>
@@ -111,7 +228,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="finance.one">
       <firstName>Finance</firstName>
@@ -120,7 +246,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="finance.two">
       <firstName>Finance</firstName>
@@ -129,7 +264,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="general.manager">
       <firstName>General</firstName>
@@ -138,7 +282,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="general.one">
       <firstName>General</firstName>
@@ -147,7 +300,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="general.two">
       <firstName>General</firstName>
@@ -156,7 +318,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="technical.manager">
       <firstName>Technical</firstName>
@@ -165,7 +336,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value>SENIOR</value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>GERMAN</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="technical.one">
       <firstName>Technical</firstName>
@@ -174,7 +354,16 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value>SENIOR</value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>ENGLISH,FRENCH</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="technical.two">
       <firstName>Technical</firstName>
@@ -183,32 +372,95 @@
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value>MEDIOR</value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value>ENGLISH,GERMAN</value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
     <user userName="employee.manager">
       <firstName>Employee</firstName>
       <lastName>Manager</lastName>
-      <manager>company.director</manager>
+      <manager>company.manager</manager>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
-    <user userName="company.director">
+    <user userName="company.manager">
       <firstName>Company</firstName>
-      <lastName>Director</lastName>
+      <lastName>Manager</lastName>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
-      <customUserInfoValues/>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>seniority</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>languages</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
     </user>
   </users>
   <roles>
-    <role name="Member">
-      <displayName>Member</displayName>
+    <role name="HRMember">
+      <displayName>HRMember</displayName>
     </role>
-    <role name="Manager">
-      <displayName>Manager</displayName>
+    <role name="HRManager">
+      <displayName>HRManager</displayName>
+    </role>
+    <role name="ProcurementMember">
+      <displayName>ProcurementMember</displayName>
+    </role>
+    <role name="ProcurementManager">
+      <displayName>ProcurementManager</displayName>
+    </role>
+    <role name="FinanceMember">
+      <displayName>FinanceMember</displayName>
+    </role>
+    <role name="FinanceManager">
+      <displayName>FinanceManager</displayName>
+    </role>
+    <role name="GeneralMember">
+      <displayName>GeneralMember</displayName>
+    </role>
+    <role name="GeneralManager">
+      <displayName>GeneralManager</displayName>
+    </role>
+    <role name="TechnicalMember">
+      <displayName>TechnicalMember</displayName>
+    </role>
+    <role name="TechnicalManager">
+      <displayName>TechnicalManager</displayName>
+    </role>
+    <role name="ApplicantMember">
+      <displayName>ApplicantMember</displayName>
+    </role>
+    <role name="SupplierMember">
+      <displayName>SupplierMember</displayName>
+    </role>
+    <role name="EmployeeManager">
+      <displayName>EmployeeManager</displayName>
+    </role>
+    <role name="CompanyManager">
+      <displayName>CompanyManager</displayName>
     </role>
   </roles>
   <groups>
@@ -243,139 +495,139 @@
   <memberships>
     <membership>
       <userName>applicant.one</userName>
-      <roleName>Member</roleName>
+      <roleName>ApplicantMember</roleName>
       <groupName>Applicant</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>applicant.two</userName>
-      <roleName>Member</roleName>
+      <roleName>ApplicantMember</roleName>
       <groupName>Applicant</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>applicant.three</userName>
-      <roleName>Member</roleName>
+      <roleName>ApplicantMember</roleName>
       <groupName>Applicant</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>supplier.one</userName>
-      <roleName>Member</roleName>
+      <roleName>SupplierMember</roleName>
       <groupName>Supplier</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>supplier.two</userName>
-      <roleName>Member</roleName>
+      <roleName>SupplierMember</roleName>
       <groupName>Supplier</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>supplier.three</userName>
-      <roleName>Member</roleName>
+      <roleName>SupplierMember</roleName>
       <groupName>Supplier</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
       <userName>hr.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>HRManager</roleName>
       <groupName>HR</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>hr.one</userName>
-      <roleName>Member</roleName>
+      <roleName>HRMember</roleName>
       <groupName>HR</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>hr.two</userName>
-      <roleName>Member</roleName>
+      <roleName>HRMember</roleName>
       <groupName>HR</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>procurement.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>ProcurementManager</roleName>
       <groupName>Procurement</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>procurement.one</userName>
-      <roleName>Member</roleName>
+      <roleName>ProcurementMember</roleName>
       <groupName>Procurement</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>procurement.two</userName>
-      <roleName>Member</roleName>
+      <roleName>ProcurementMember</roleName>
       <groupName>Procurement</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>finance.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>FinanceManager</roleName>
       <groupName>Finance</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>finance.one</userName>
-      <roleName>Member</roleName>
+      <roleName>FinanceMember</roleName>
       <groupName>Finance</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>finance.two</userName>
-      <roleName>Member</roleName>
+      <roleName>FinanceMember</roleName>
       <groupName>Finance</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>general.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>GeneralManager</roleName>
       <groupName>General</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>general.one</userName>
-      <roleName>Member</roleName>
+      <roleName>GeneralMember</roleName>
       <groupName>General</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>general.two</userName>
-      <roleName>Member</roleName>
+      <roleName>GeneralMember</roleName>
       <groupName>General</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>technical.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>TechnicalManager</roleName>
       <groupName>Technical</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>technical.one</userName>
-      <roleName>Member</roleName>
+      <roleName>TechnicalMember</roleName>
       <groupName>Technical</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>technical.two</userName>
-      <roleName>Member</roleName>
+      <roleName>TechnicalMember</roleName>
       <groupName>Technical</groupName>
       <groupParentPath>/Company/Employee</groupParentPath>
     </membership>
     <membership>
       <userName>employee.manager</userName>
-      <roleName>Manager</roleName>
+      <roleName>EmployeeManager</roleName>
       <groupName>Employee</groupName>
       <groupParentPath>/Company</groupParentPath>
     </membership>
     <membership>
-      <userName>company.director</userName>
-      <roleName>Manager</roleName>
+      <userName>company.manager</userName>
+      <roleName>CompanyManager</roleName>
       <groupName>Company</groupName>
     </membership>
   </memberships>
