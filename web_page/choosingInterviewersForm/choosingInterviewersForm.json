@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "choosingInterviewersForm",
   "name" : "choosingInterviewersForm",
-  "lastUpdate" : 1640435914294,
+  "lastUpdate" : 1640536222395,
   "rows" : [
     [
       {
@@ -906,7 +906,17 @@
                               },
                               "required" : {
                                 "type" : "constant",
-                                "value" : true
+                                "value" : false
+                              },
+                              "disabled" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "displayedKey" : {
+                                "type" : "constant"
+                              },
+                              "returnedKey" : {
+                                "type" : "constant"
                               }
                             },
                             "reference" : "9de53f5d-28d7-40a4-8e05-7d26c401a833",
@@ -1081,6 +1091,30 @@
                               "dimension" : {
                                 "type" : "constant",
                                 "value" : 12
+                              },
+                              "assign" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "url" : {
+                                "type" : "interpolation"
+                              },
+                              "responseStatusCode" : {
+                                "type" : "variable"
+                              },
+                              "dataFromSuccess" : {
+                                "type" : "variable"
+                              },
+                              "closeOnSuccess" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "dataFromError" : {
+                                "type" : "variable"
+                              },
+                              "modalId" : {
+                                "type" : "constant",
+                                "value" : ""
                               }
                             },
                             "reference" : "22b86d10-a94a-470c-9622-9c98250e9e32",
@@ -1106,8 +1140,8 @@
                           "type" : "variable"
                         },
                         "hidden" : {
-                          "type" : "constant",
-                          "value" : false
+                          "type" : "expression",
+                          "value" : "jobApplication_potentialInterviewTerms.length == 3"
                         },
                         "cssClasses" : {
                           "type" : "constant",
@@ -1420,7 +1454,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Confirm"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -1462,6 +1496,29 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "72b02b7f-814e-42b8-8b05-6465e3073e1c",
@@ -1605,7 +1662,27 @@
         "\t\tchoosenTechnicalInterviewerIdInput: $data.formInput.choosenTechnicalInterviewerIdInput,",
         "\t\tchoosenLanguageInterviewerIdInput: $data.formInput.choosenLanguageInterviewerIdInput",
         "\t}",
-        "}"
+        "}",
+        "$data.jobApplication.potentialInterviewTerms = $data.jobApplication_potentialInterviewTerms;",
+        "return {",
+        "\t\t//map jobApplication variable to expected task contract input",
+        "\t\tjobApplicationInput: {",
+        "\t\t\tname: $data.jobApplication.name !== undefined ? $data.jobApplication.name : null,",
+        "\t\t\tsurname: $data.jobApplication.surname !== undefined ? $data.jobApplication.surname : null,",
+        "\t\t\temail: $data.jobApplication.email !== undefined ? $data.jobApplication.email : null,",
+        "\t\t\taddress: $data.jobApplication.address !== undefined ? $data.jobApplication.address : null,",
+        "\t\t\tgradeOfEducation: $data.jobApplication.gradeOfEducation !== undefined ? $data.jobApplication.gradeOfEducation : null,",
+        "\t\t\tcv: $data.jobApplication.cv !== undefined ? $data.jobApplication.cv : null,",
+        "\t\t\tletter: $data.jobApplication.letter !== undefined ? $data.jobApplication.letter : null,",
+        "\t\t\tpotentialInterviewTerms: $data.jobApplication.potentialInterviewTerms.map( it => ({",
+        "\t\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null,",
+        "\t\t\t\tdateTime: it.dateTime !== undefined ? it.dateTime : null",
+        "\t\t\t}))",
+        "\t\t},",
+        "\t\tchoosenHRInterviewerIdInput: $data.formInput.choosenHRInterviewerIdInput,",
+        "\t\tchoosenTechnicalInterviewerIdInput: $data.formInput.choosenTechnicalInterviewerIdInput,",
+        "\t\tchoosenLanguageInterviewerIdInput: $data.formInput.choosenLanguageInterviewerIdInput",
+        "\t}"
       ],
       "exposed" : false
     },
@@ -1677,7 +1754,7 @@
     "languageUsers" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&f=group_id=18&f=group_id=22"
+        "../API/identity/user?p=0&c=100&f=group_id=18"
       ],
       "advancedOptions" : { },
       "exposed" : false
