@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "equipmentPurchaseRequestForm",
   "name" : "equipmentPurchaseRequestForm",
-  "lastUpdate" : 1640541198569,
+  "lastUpdate" : 1640546953362,
   "rows" : [
     [
       {
@@ -249,7 +249,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "equipmentPurchaseRequest.employeeName"
+                          "value" : ""
                         },
                         "required" : {
                           "type" : "constant",
@@ -331,11 +331,29 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "equipmentPurchaseRequest.employeeSurname"
+                          "value" : ""
                         },
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "2b68e6c3-ad9c-4b8f-86c5-00490f617152",
@@ -1034,8 +1052,8 @@
         "\treturn {",
         "\t\t//map equipmentPurchaseRequest variable to expected task contract input",
         "\t\tequipmentPurchaseRequestInput: {",
-        "\t\t\temployeeName: $data.equipmentPurchaseRequest.employeeName !== undefined ? $data.equipmentPurchaseRequest.employeeName : null,",
-        "\t\t\temployeeSurname: $data.equipmentPurchaseRequest.employeeSurname !== undefined ? $data.equipmentPurchaseRequest.employeeSurname : null,",
+        "\t\t\temployeeName: $data.LoggedEmployeeName.firstname,",
+        "\t\t\temployeeSurname: $data.LoggedEmployee.lastname,",
         "\t\t\tequipment: $data.equipmentPurchaseRequest.equipment.map( it => ({",
         "\t\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null,",
         "\t\t\t\ttype: it.type ? {",
@@ -1084,6 +1102,22 @@
       "value" : [
         "../API/bdm/businessData/com.company.model.equipment.EquipmentType?q=find&p=0&c=99"
       ],
+      "exposed" : false
+    },
+    "LoggedEmployee" : {
+      "type" : "url",
+      "value" : [
+        "../API/system/session/1"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "LoggedEmployeeName" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/user/{{LoggedEmployee.user_id}}"
+      ],
+      "advancedOptions" : { },
       "exposed" : false
     }
   },
