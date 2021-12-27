@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.2",
-  "id" : "technicalInterviewForm",
-  "name" : "technicalInterviewForm",
-  "lastUpdate" : 1640637767661,
+  "id" : "languageInterviewForm",
+  "name" : "languageInterviewForm",
+  "lastUpdate" : 1640637785344,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "be2dc517-441a-4400-a297-9b5587a1d0b9",
+        "reference" : "b66c6a3f-4174-41bd-8a1e-09bb1898cf2a",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "15b2abcb-1583-4db0-961f-204e7537940e",
+              "reference" : "befd9d35-8a92-40f3-9ea4-b9c4c41e1a4d",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "6581ef28-5c66-4a1b-a760-5dbd8f03f96e",
+              "reference" : "e62abcc1-5a19-4496-b169-9adb202bbaf1",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -114,7 +114,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "5362ecde-190b-49de-8523-2641faf74fba",
+        "reference" : "26abe20a-3f74-4a61-868a-461d88cf66e5",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "c6cd5a0f-7904-48a8-9cb5-71f0eff6c97a",
+          "reference" : "c55e1e7c-35a2-46af-bb4f-251b4ba39a6d",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -162,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "e3f066ed-9794-4efe-ad75-5595595fb83c",
+                "reference" : "e910c06a-aed5-4dc8-bbca-2375cbc3eaef",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -194,7 +194,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "294b85b1-2515-482c-8512-f31ac63c6397",
+                "reference" : "c295bd65-f251-426b-b43a-fbc03ca7f7d6",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -274,7 +274,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "ef0e91c6-94f0-452b-815d-951a4b0a9364",
+                      "reference" : "5502fd30-7723-4a51-b79e-400b54f9fab3",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -356,7 +356,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "efac2d47-8d75-42dc-87e9-0e3d86c5aefd",
+                      "reference" : "0c55fd9d-b6d3-4843-898b-6a3c7acac584",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -438,7 +438,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "92a982f7-8bc8-4036-a49f-fd86cfb46ba8",
+                      "reference" : "800d52bc-afb3-48cf-9f95-78842bf93f9b",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -520,7 +520,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "e6780643-88db-4e34-a8a0-fdd0e902c1e0",
+                      "reference" : "52167079-9f31-4ed8-a18e-327298e132ef",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -602,7 +602,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "0b79b414-82e7-4e1f-854f-143bf79da332",
+                      "reference" : "ecb4eb0d-e895-4ee1-917b-3fcc6bdb51d2",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -684,7 +684,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "44b7e4b4-69d8-4ba6-a975-1c38625fdec7",
+                      "reference" : "a17ce633-ea26-4b6b-9bef-7beea11c219f",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -766,7 +766,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "48d8ab8e-4125-40a7-b4a2-3ce8c86e3760",
+                      "reference" : "f8b14a63-f9b3-4873-8622-cbe1ad673465",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -807,7 +807,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "3e713595-2ae4-4c04-aab5-0ca73d96f8fc",
+                      "reference" : "735ff450-234c-4fce-a10f-40a4842a0c92",
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
@@ -839,7 +839,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "e48fafd8-fbb3-49fb-b33a-04be351c0516",
+                      "reference" : "ae142805-339c-405e-aec3-c65d50c49625",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -937,7 +937,7 @@
                                 "value" : false
                               }
                             },
-                            "reference" : "2f7e07ee-3b56-4c82-870c-f6b0a01bb2e2",
+                            "reference" : "c2b66e99-c21d-4968-83a7-67b29fbc63ed",
                             "hasValidationError" : false,
                             "id" : "pbDateTimePicker",
                             "description" : ""
@@ -973,7 +973,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Technical Interview Result"
+                    "value" : "Language Interview Result"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -984,7 +984,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "4d6a4faa-39ca-47a4-8740-1cb245930e51",
+                "reference" : "6c1cc80e-7301-49a0-bef3-2ad7599f59e0",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -1001,8 +1001,7 @@
                 },
                 "propertyValues" : {
                   "repeatedCollection" : {
-                    "type" : "variable",
-                    "value" : ""
+                    "type" : "variable"
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -1017,7 +1016,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "4d6e4317-c27e-419b-901f-b5c576ca84e7",
+                "reference" : "44a97b63-1600-421a-8153-b26aa9601c06",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -1057,14 +1056,14 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "technicalInterviewResult.recommendation"
+                          "value" : "languageInterviewResult.recommendation"
                         },
                         "required" : {
                           "type" : "constant",
                           "value" : false
                         }
                       },
-                      "reference" : "e319ed9c-856f-4cdf-b3ed-551b3853d830",
+                      "reference" : "e2d1d97f-fb31-46e8-a1d0-77889da93f1e",
                       "hasValidationError" : false,
                       "id" : "pbCheckbox",
                       "description" : ""
@@ -1121,7 +1120,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "technicalInterviewResult.grade"
+                          "value" : "languageInterviewResult.grade"
                         },
                         "required" : {
                           "type" : "constant",
@@ -1148,7 +1147,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "18ab04b3-85ee-4ccc-81b5-b327bbca3215",
+                      "reference" : "6c2b7e9f-2274-49ec-8b89-8ebc97f6dc71",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -1205,7 +1204,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "technicalInterviewResult.description"
+                          "value" : "languageInterviewResult.description"
                         },
                         "required" : {
                           "type" : "constant",
@@ -1230,7 +1229,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "db42313a-b30f-4ab8-9539-e67809cf3ea5",
+                      "reference" : "de462e7a-c4b5-4cf7-8d40-0f9297d1505e",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -1333,7 +1332,7 @@
                     "value" : ""
                   }
                 },
-                "reference" : "98fedf12-256f-4f82-a6b6-02fb5ca322ef",
+                "reference" : "46b29827-7422-4a28-95de-9f88b0450667",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -1385,7 +1384,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "c57a99a9-d0d3-4929-b775-43bd5f4c17de",
+                "reference" : "b1d49924-5ab5-410f-ba7b-c3073689133a",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -1398,26 +1397,26 @@
   ],
   "assets" : [
     {
-      "id" : "b68bda6e-7e04-4324-b2ae-9a5dd3e356ea",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "29fbc790-62d2-4faa-84ce-2c03bda50a00",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "5ec662ca-baa6-4499-ae89-738028c27a71",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "d5c5007f-15fd-4ebd-9fee-a6a9e246251c",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
   ],
   "inactiveAssets" : [ ],
   "variables" : {
-    "technicalInterviewResult" : {
+    "languageInterviewResult_type" : {
       "type" : "url",
       "value" : [
-        "../{{context.technicalInterviewResult_ref.link}}"
+        "{{languageInterviewResult|lazyRef:'type'}}"
       ],
       "exposed" : false
     },
@@ -1464,13 +1463,6 @@
       ],
       "exposed" : false
     },
-    "technicalInterviewResult_type" : {
-      "type" : "url",
-      "value" : [
-        "{{technicalInterviewResult|lazyRef:'type'}}"
-      ],
-      "exposed" : false
-    },
     "interviewResult_query" : {
       "type" : "url",
       "value" : [
@@ -1481,12 +1473,12 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.jobApplication && $data.jobApplication_potentialInterviewTerms && $data.jobApplication_choosenInterviewTerm && $data.jobApplication_interviewResults && $data.technicalInterviewResult && $data.technicalInterviewResult_type ){",
+        "if( $data.jobApplication && $data.jobApplication_potentialInterviewTerms && $data.jobApplication_choosenInterviewTerm && $data.jobApplication_interviewResults && $data.languageInterviewResult && $data.languageInterviewResult_type ){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.jobApplication.potentialInterviewTerms = $data.jobApplication_potentialInterviewTerms;",
         "\t$data.jobApplication.choosenInterviewTerm = $data.jobApplication_choosenInterviewTerm;",
         "\t$data.jobApplication.interviewResults = $data.jobApplication_interviewResults;",
-        "\t$data.technicalInterviewResult.type = $data.technicalInterviewResult_type;",
+        "\t$data.languageInterviewResult.type = $data.languageInterviewResult_type;",
         "\treturn {",
         "\t\t//map jobApplication variable to expected task contract input",
         "\t\tjobApplicationInput: {",
@@ -1511,21 +1503,21 @@
         "\t\t\t\t} : null",
         "\t\t\t}))",
         "\t\t},",
-        "\t\t//map technicalInterviewResult variable to expected task contract input",
-        "\t\ttechnicalInterviewResultInput: {",
-        "\t\t\trecommendation: $data.technicalInterviewResult.recommendation !== undefined ? $data.technicalInterviewResult.recommendation : null,",
-        "\t\t\tgrade: $data.technicalInterviewResult.grade !== undefined ? $data.technicalInterviewResult.grade : null,",
-        "\t\t\tdescription: $data.technicalInterviewResult.description !== undefined ? $data.technicalInterviewResult.description : null,",
+        "\t\t//map languageInterviewResult variable to expected task contract input",
+        "\t\tlanguageInterviewResultInput: {",
+        "\t\t\trecommendation: $data.languageInterviewResult.recommendation !== undefined ? $data.languageInterviewResult.recommendation : null,",
+        "\t\t\tgrade: $data.languageInterviewResult.grade !== undefined ? $data.languageInterviewResult.grade : null,",
+        "\t\t\tdescription: $data.languageInterviewResult.description !== undefined ? $data.languageInterviewResult.description : null,",
         "\t\t\ttype: {",
-        "\t\t\t\tname: \"Technical\"",
-        "\t\t\t} ",
+        "\t\t\t\tname: \"Language\"",
+        "\t\t\t}",
         "\t\t}",
         "\t}",
         "}",
-        "    $data.jobApplication.potentialInterviewTerms = $data.jobApplication_potentialInterviewTerms;",
+        "\t$data.jobApplication.potentialInterviewTerms = $data.jobApplication_potentialInterviewTerms;",
         "\t$data.jobApplication.choosenInterviewTerm = $data.jobApplication_choosenInterviewTerm;",
         "\t$data.jobApplication.interviewResults = $data.jobApplication_interviewResults;",
-        "\t$data.technicalInterviewResult.type = $data.technicalInterviewResult_type;",
+        "\t$data.languageInterviewResult.type = $data.languageInterviewResult_type;",
         "\treturn {",
         "\t\t//map jobApplication variable to expected task contract input",
         "\t\tjobApplicationInput: {",
@@ -1550,14 +1542,14 @@
         "\t\t\t\t} : null",
         "\t\t\t}))",
         "\t\t},",
-        "\t\t//map technicalInterviewResult variable to expected task contract input",
-        "\t\ttechnicalInterviewResultInput: {",
-        "\t\t\trecommendation: $data.technicalInterviewResult.recommendation !== undefined ? $data.technicalInterviewResult.recommendation : null,",
-        "\t\t\tgrade: $data.technicalInterviewResult.grade !== undefined ? $data.technicalInterviewResult.grade : null,",
-        "\t\t\tdescription: $data.technicalInterviewResult.description !== undefined ? $data.technicalInterviewResult.description : null,",
+        "\t\t//map languageInterviewResult variable to expected task contract input",
+        "\t\tlanguageInterviewResultInput: {",
+        "\t\t\trecommendation: $data.languageInterviewResult.recommendation !== undefined ? $data.languageInterviewResult.recommendation : null,",
+        "\t\t\tgrade: $data.languageInterviewResult.grade !== undefined ? $data.languageInterviewResult.grade : null,",
+        "\t\t\tdescription: $data.languageInterviewResult.description !== undefined ? $data.languageInterviewResult.description : null,",
         "\t\t\ttype: {",
-        "\t\t\t\tname: \"Technical\"",
-        "\t\t\t} ",
+        "\t\t\t\tname: \"Language\"",
+        "\t\t\t}",
         "\t\t}",
         "\t}"
       ],
@@ -1567,6 +1559,13 @@
       "type" : "url",
       "value" : [
         "../API/bpm/userTask/{{taskId}}/context"
+      ],
+      "exposed" : false
+    },
+    "languageInterviewResult" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.languageInterviewResult_ref.link}}"
       ],
       "exposed" : false
     },
@@ -1593,7 +1592,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "68d572fb-48a1-451c-ae76-d05595fb9749",
+  "uuid" : "ce252ed7-e177-4807-9d25-92817e8ace3d",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

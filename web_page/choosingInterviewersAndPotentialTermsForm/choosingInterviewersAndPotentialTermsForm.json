@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "choosingInterviewersAndPotentialTermsForm",
   "name" : "choosingInterviewersAndPotentialTermsForm",
-  "lastUpdate" : 1640602392202,
+  "lastUpdate" : 1640638610435,
   "rows" : [
     [
       {
@@ -1555,19 +1555,15 @@
     "hrUsers" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&f=group_id=18"
+        "../API/identity/user?p=0&c=100&f=group_id={{hrGroup[0].id}}"
       ],
-      "advancedOptions" : {
-        "headers" : "",
-        "statusCode" : "",
-        "failedResponseValue" : ""
-      },
+      "advancedOptions" : { },
       "exposed" : false
     },
     "technicalUsers" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&f=group_id=22"
+        "../API/identity/user?p=0&c=100&f=group_id={{technicalGroup[0].id}}"
       ],
       "advancedOptions" : { },
       "exposed" : false
@@ -1575,7 +1571,31 @@
     "languageUsers" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&f=group_id=18"
+        "../API/identity/user?p=0&c=100&f=group_id={{languageGroup[0].id}}"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "hrGroup" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/group?p=0&c=100&f=name=HR"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "technicalGroup" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/group?p=0&c=100&f=name=Technical"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "languageGroup" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/group?p=0&c=100&f=name=HR"
       ],
       "advancedOptions" : { },
       "exposed" : false
