@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "jobApplicationForm",
   "name" : "jobApplicationForm",
-  "lastUpdate" : 1640354635941,
+  "lastUpdate" : 1640602860661,
   "rows" : [
     [
       {
@@ -511,6 +511,26 @@
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "max" : {
+                          "type" : "constant",
+                          "value" : 8
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "d9269c1b-d64d-401c-b700-811c0cc71d1d",
