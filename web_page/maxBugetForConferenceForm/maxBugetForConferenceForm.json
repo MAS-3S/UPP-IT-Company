@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.2",
-  "id" : "conferenceRequestForm",
-  "name" : "conferenceRequestForm",
-  "lastUpdate" : 1640557727731,
+  "id" : "maxBugetForConferenceForm",
+  "name" : "maxBugetForConferenceForm",
+  "lastUpdate" : 1640626764906,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "a4d76cfe-d174-4e0c-989f-7ed965f8de6f",
+        "reference" : "e5038554-1946-4e64-9551-57237cc1889d",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "c661fae9-9987-462a-ae59-f7a32e8171ec",
+              "reference" : "1148a021-7bd8-4a1f-9704-1f80144df581",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "9d1bf451-a7a6-40a7-8939-c7c3819cd852",
+              "reference" : "70ed5b88-c8fc-47c1-802c-585a1778091d",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -114,7 +114,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "089d6919-ca1b-467a-8b4c-3271c506675d",
+        "reference" : "18f32272-9d7c-4154-a4b8-84b94e438ba0",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "2b00d72d-8b21-42a3-bf40-b852675a8d39",
+          "reference" : "19f9d046-cba7-4e12-b8aa-32e69f5086d1",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -162,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "35fda54f-7b0f-4926-868c-02ea85f0e426",
+                "reference" : "92df66af-4ec7-4a5e-9b90-a768bd90c4b9",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -195,7 +195,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "a7a4748f-88ad-4ff5-bc3d-26e6cbd0a58e",
+                "reference" : "5a4a3ff5-fd44-4f62-9d33-515969ca2cf4",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -203,10 +203,10 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 6,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 6
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -250,7 +250,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "LoggedEmployeeName.firstname"
+                          "value" : "conferenceRequest.employeeName"
                         },
                         "required" : {
                           "type" : "constant",
@@ -275,20 +275,18 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "15116f0b-8a32-4923-8184-384419097e46",
+                      "reference" : "6cccaff6-5c75-4882-bcc0-828196a6742a",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
-                    }
-                  ],
-                  [
+                    },
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 6,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 6
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -332,7 +330,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "LoggedEmployeeName.lastname"
+                          "value" : "conferenceRequest.employeeSurname"
                         },
                         "required" : {
                           "type" : "constant",
@@ -357,7 +355,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "143bae33-1d77-425a-8013-41a567f988f8",
+                      "reference" : "859f2a84-590c-4fb3-a873-bae1d9e85e61",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -367,10 +365,10 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 4,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 4
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -387,7 +385,7 @@
                         },
                         "disabled" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "label" : {
                           "type" : "interpolation",
@@ -406,20 +404,18 @@
                           "value" : false
                         }
                       },
-                      "reference" : "8486cb49-3e61-417f-9bee-127ac7e8ea49",
+                      "reference" : "f2187701-80d0-41af-ac63-6f14be39efd1",
                       "hasValidationError" : false,
                       "id" : "pbCheckbox",
                       "description" : ""
-                    }
-                  ],
-                  [
+                    },
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 4,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 4
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -436,7 +432,7 @@
                         },
                         "disabled" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "label" : {
                           "type" : "interpolation",
@@ -455,7 +451,54 @@
                           "value" : false
                         }
                       },
-                      "reference" : "9d6836a6-c91f-4680-8668-b75bd0d4f50c",
+                      "reference" : "ec49f946-6059-4a4e-a526-d95ac5c2c468",
+                      "hasValidationError" : false,
+                      "id" : "pbCheckbox",
+                      "description" : ""
+                    },
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 4,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Is Accepted"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "conferenceRequest.isAccepted"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "d9547b3b-0c7b-4667-8a46-2f063f46ee9b",
                       "hasValidationError" : false,
                       "id" : "pbCheckbox",
                       "description" : ""
@@ -465,10 +508,10 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 6,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 6
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -493,15 +536,14 @@
                         },
                         "readOnly" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "{{conferenceRequest.isCourse ? 'Course' : 'Conference'}} name"
+                          "value" : "Name"
                         },
                         "placeholder" : {
-                          "type" : "constant",
-                          "value" : ""
+                          "type" : "constant"
                         },
                         "type" : {
                           "type" : "constant",
@@ -538,20 +580,18 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "5f132c40-d7f3-452a-a011-f5c41a22dfb9",
+                      "reference" : "47b82d77-7fca-4278-a5da-26b88a7fc768",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
-                    }
-                  ],
-                  [
+                    },
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "md" : 6,
                         "sm" : 12,
                         "xs" : 12,
-                        "lg" : 12
+                        "lg" : 6
                       },
                       "propertyValues" : {
                         "labelHidden" : {
@@ -576,11 +616,11 @@
                         },
                         "readOnly" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Price (EUR)"
+                          "value" : "Price"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -620,7 +660,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "f05445fa-d261-4fbb-b02a-b76a2d9f62c7",
+                      "reference" : "b988a85a-d4e7-4d22-9b09-393d92bd82ed",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -662,11 +702,11 @@
                         },
                         "readOnly" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Date"
+                          "value" : "Date Time"
                         },
                         "type" : {
                           "type" : "constant"
@@ -720,9 +760,155 @@
                           "value" : false
                         }
                       },
-                      "reference" : "5b32c208-668a-4dbe-a523-d54f874ac4da",
+                      "reference" : "9d0a3e8e-36b7-4608-bbcf-914d4ff10740",
                       "hasValidationError" : false,
                       "id" : "pbDateTimePicker",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Max Bugdet For Accommodation"
+                        },
+                        "placeholder" : {
+                          "type" : "constant"
+                        },
+                        "type" : {
+                          "type" : "constant",
+                          "value" : "number"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "conferenceRequest.maxBugdetForAccommodation"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
+                        }
+                      },
+                      "reference" : "672e70d9-830b-4f0b-9f2f-d192e7d9c392",
+                      "hasValidationError" : false,
+                      "id" : "pbInput",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Max Buget For Transport"
+                        },
+                        "placeholder" : {
+                          "type" : "constant"
+                        },
+                        "type" : {
+                          "type" : "constant",
+                          "value" : "number"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "conferenceRequest.maxBugetForTransport"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "6c516b2b-342f-4b83-bbbb-35b35b9745c3",
+                      "hasValidationError" : false,
+                      "id" : "pbInput",
                       "description" : ""
                     }
                   ]
@@ -756,7 +942,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit request"
+                    "value" : "Submit"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -798,32 +984,9 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
-                  },
-                  "assign" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "url" : {
-                    "type" : "interpolation"
-                  },
-                  "responseStatusCode" : {
-                    "type" : "variable",
-                    "value" : ""
-                  },
-                  "dataFromSuccess" : {
-                    "type" : "variable",
-                    "value" : ""
-                  },
-                  "closeOnSuccess" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "modalId" : {
-                    "type" : "constant",
-                    "value" : ""
                   }
                 },
-                "reference" : "542b2761-7957-4da0-b992-7240a44fe7c5",
+                "reference" : "b31e5676-80c0-4881-abdf-0006ec758b36",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -875,7 +1038,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "dec24d0d-14ef-4709-8eb2-18ad631800fe",
+                "reference" : "403e553d-e815-49f6-b953-3579fff77215",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -888,14 +1051,14 @@
   ],
   "assets" : [
     {
-      "id" : "e5fb5ffc-6971-43a5-9ee6-7174874769e6",
+      "id" : "6f78e6c8-800d-4256-aab2-5a934c37ff92",
       "name" : "style.css",
       "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "10b262cb-8628-40df-86fe-0ea4161d6020",
+      "id" : "b63c0d9d-512f-4cdc-9563-5acc601805c2",
       "name" : "localization.json",
       "type" : "json",
       "order" : 0,
@@ -940,13 +1103,16 @@
         "\treturn {",
         "\t\t//map conferenceRequest variable to expected task contract input",
         "\t\tconferenceRequestInput: {",
-        "\t\t\temployeeName: $data.LoggedEmployeeName.firstname,",
-        "\t\t\temployeeSurname: $data.LoggedEmployeeName.lastname,",
+        "\t\t\temployeeName: $data.conferenceRequest.employeeName !== undefined ? $data.conferenceRequest.employeeName : null,",
+        "\t\t\temployeeSurname: $data.conferenceRequest.employeeSurname !== undefined ? $data.conferenceRequest.employeeSurname : null,",
         "\t\t\tname: $data.conferenceRequest.name !== undefined ? $data.conferenceRequest.name : null,",
         "\t\t\tprice: $data.conferenceRequest.price !== undefined ? $data.conferenceRequest.price : null,",
         "\t\t\tdateTime: $data.conferenceRequest.dateTime !== undefined ? $data.conferenceRequest.dateTime : null,",
         "\t\t\tisCourse: $data.conferenceRequest.isCourse !== undefined ? $data.conferenceRequest.isCourse : null,",
-        "\t\t\tisOnline: $data.conferenceRequest.isOnline !== undefined ? $data.conferenceRequest.isOnline : null",
+        "\t\t\tisOnline: $data.conferenceRequest.isOnline !== undefined ? $data.conferenceRequest.isOnline : null,",
+        "\t\t\tmaxBugdetForAccommodation: $data.conferenceRequest.maxBugdetForAccommodation !== undefined ? $data.conferenceRequest.maxBugdetForAccommodation : null,",
+        "\t\t\tmaxBugetForTransport: $data.conferenceRequest.maxBugetForTransport !== undefined ? $data.conferenceRequest.maxBugetForTransport : null,",
+        "\t\t\tisAccepted: $data.conferenceRequest.isAccepted !== undefined ? $data.conferenceRequest.isAccepted : null",
         "\t\t}",
         "\t}",
         "}"
@@ -966,30 +1132,10 @@
         "id"
       ],
       "exposed" : false
-    },
-    "LoggedEmployee" : {
-      "type" : "url",
-      "value" : [
-        "../API/system/session/1"
-      ],
-      "advancedOptions" : {
-        "headers" : "",
-        "statusCode" : "",
-        "failedResponseValue" : ""
-      },
-      "exposed" : false
-    },
-    "LoggedEmployeeName" : {
-      "type" : "url",
-      "value" : [
-        "../API/identity/user/{{LoggedEmployee.user_id}}"
-      ],
-      "advancedOptions" : { },
-      "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "6539b335-8a7f-4d10-ad53-e3c63eecc31f",
+  "uuid" : "c4cda297-21d2-4b0e-b3de-7a7187f2d419",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }
