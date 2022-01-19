@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "choosingInterviewersAndPotentialTermsForm",
   "name" : "choosingInterviewersAndPotentialTermsForm",
-  "lastUpdate" : 1640638610435,
+  "lastUpdate" : 1642532948384,
   "rows" : [
     [
       {
@@ -898,7 +898,7 @@
                   },
                   "availableValues" : {
                     "type" : "expression",
-                    "value" : "technicalUsers"
+                    "value" : "technicalUsersResult"
                   },
                   "displayedKey" : {
                     "type" : "constant",
@@ -1565,7 +1565,11 @@
       "value" : [
         "../API/identity/user?p=0&c=100&f=group_id={{technicalGroup[0].id}}"
       ],
-      "advancedOptions" : { },
+      "advancedOptions" : {
+        "headers" : "",
+        "statusCode" : "",
+        "failedResponseValue" : ""
+      },
       "exposed" : false
     },
     "languageUsers" : {
@@ -1598,6 +1602,31 @@
         "../API/identity/group?p=0&c=100&f=name=HR"
       ],
       "advancedOptions" : { },
+      "exposed" : false
+    },
+    "technicalUsersSeniors" : {
+      "type" : "url",
+      "value" : [
+        "../API/customuserinfo/value?c=10&p=0&f=value=SENIOR"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "technicalUsersResult" : {
+      "type" : "expression",
+      "value" : [
+        "var usersResult = []",
+        "",
+        "for(let i = 0; i < $data.technicalUsersSeniors.length; i++) {",
+        "    for(let j = 0; j < $data.technicalUsers.length; j++) {",
+        "         if($data.technicalUsersSeniors[i].userId === $data.technicalUsers[j].id) {",
+        "            usersResult.push($data.technicalUsers[j])",
+        "         }",
+        "    }",
+        "}",
+        "",
+        "return usersResult;"
+      ],
       "exposed" : false
     }
   },
