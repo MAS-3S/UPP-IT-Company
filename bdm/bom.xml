@@ -25,6 +25,10 @@
                 <field type="DOUBLE" length="255" name="maxBugetForTransport" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="isAccepted" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="explanation" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.conference.Transport" fetchType="EAGER" name="potentialTransports" nullable="true" collection="true"/>
+                <relationField type="AGGREGATION" reference="com.company.model.conference.Transport" fetchType="EAGER" name="choosenTransport" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.conference.Accommodation" fetchType="LAZY" name="potentialAccommodations" nullable="true" collection="true"/>
+                <relationField type="AGGREGATION" reference="com.company.model.conference.Accommodation" fetchType="LAZY" name="choosenAccommodation" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
