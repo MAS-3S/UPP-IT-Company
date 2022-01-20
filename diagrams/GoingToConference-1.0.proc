@@ -1318,6 +1318,28 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_hTYLo3l8Eeyz4IHadc4k3w" type="ASSIGNMENT"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_H6WLkHnkEeyt49ZTry-jdA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_H6WLkXnkEeyt49ZTry-jdA" name="conferenceRequest" content="conferenceRequest" type="TYPE_VARIABLE" returnType="com.company.model.conference.ConferenceRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_IpESwHnkEeyt49ZTry-jdA" name="conferenceRequest" dataType="_jR91VGV5EeyL1IWM4_KcDg" className="com.company.model.conference.ConferenceRequest"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_H6WLknnkEeyt49ZTry-jdA" name="selectedTransports" content="selectedTransports" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_KebR4HnkEeyt49ZTry-jdA" name="selectedTransports" multiple="true" dataType="_jR91UmV5EeyL1IWM4_KcDg" className="com.company.model.conference.Transport"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_H6WLk3nkEeyt49ZTry-jdA" type="JAVA_METHOD" expression="setPotentialTransports">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_mZC3wHnmEeyAucSoWpeELQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_mZC3wXnmEeyAucSoWpeELQ" name="conferenceRequest" content="conferenceRequest" type="TYPE_VARIABLE" returnType="com.company.model.conference.ConferenceRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_nG-UwHnmEeyAucSoWpeELQ" name="conferenceRequest" dataType="_jR91VGV5EeyL1IWM4_KcDg" className="com.company.model.conference.ConferenceRequest"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_mZC3wnnmEeyAucSoWpeELQ" name="selectedAccommodations" content="selectedAccommodations" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:JavaObjectData" xmi:id="_qB5NwHnmEeyAucSoWpeELQ" name="selectedAccommodations" multiple="true" dataType="_jR91UmV5EeyL1IWM4_KcDg" className="com.company.model.conference.Accommodation"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_mZC3w3nmEeyAucSoWpeELQ" type="JAVA_METHOD" expression="setPotentialAccommodations">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_cRwos3l4Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_cRwotHl4Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_cRwotXl4Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -1329,19 +1351,74 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_C8a-0Hl9Eeyz4IHadc4k3w" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_C8a-0nl9Eeyz4IHadc4k3w" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_D8FFAHl9Eeyz4IHadc4k3w" name="Step3" outgoing="_D8QrMHl9Eeyz4IHadc4k3w" incoming="_C8hFcHl9Eeyz4IHadc4k3w" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_D8FFAHl9Eeyz4IHadc4k3w" name="Choosing transport and accommodation" outgoing="_D8QrMHl9Eeyz4IHadc4k3w" incoming="_C8hFcHl9Eeyz4IHadc4k3w" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_D8FsEXl9Eeyz4IHadc4k3w" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_D8FsEHl9Eeyz4IHadc4k3w" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_D8FsEnl9Eeyz4IHadc4k3w" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_EGjUYHnlEeyt49ZTry-jdA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_EGjUYXnlEeyt49ZTry-jdA" name="conferenceRequest" content="conferenceRequest" type="TYPE_VARIABLE" returnType="com.company.model.conference.ConferenceRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_EGjUYnnlEeyt49ZTry-jdA" name="conferenceRequest" dataType="_jR91VGV5EeyL1IWM4_KcDg" className="com.company.model.conference.ConferenceRequest"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_EGjUY3nlEeyt49ZTry-jdA" name="conferenceRequestInput.potentialTransports" content="def transportList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;conferenceRequestInput?.potentialTransports.each{&#xD;&#xA;&#x9;//Add Transport instance&#xD;&#xA;&#x9;transportList.add({ currentTransportInput ->&#xD;&#xA;&#x9;&#x9;def transportVar = transportDAO.findByPersistenceId(currentTransportInput.persistenceId_string?.trim() ? currentTransportInput.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;if(!transportVar) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Transport` with the persistence id &quot; + currentTransportInput.persistenceId_string?.trim() ? currentTransportInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;transportVar.name = currentTransportInput.name&#xD;&#xA;&#x9;&#x9;transportVar.price = currentTransportInput.price&#xD;&#xA;&#x9;&#x9;return transportVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return transportList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_EGjUZHnlEeyt49ZTry-jdA" name="conferenceRequestInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_EGjUZXnlEeyt49ZTry-jdA" name="transportDAO" content="transportDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.conference.TransportDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_EGjUZnnlEeyt49ZTry-jdA" type="JAVA_METHOD" expression="setPotentialTransports">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_EGjUZ3nlEeyt49ZTry-jdA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_EGjUaHnlEeyt49ZTry-jdA" name="conferenceRequest" content="conferenceRequest" type="TYPE_VARIABLE" returnType="com.company.model.conference.ConferenceRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_EGjUaXnlEeyt49ZTry-jdA" name="conferenceRequest" dataType="_jR91VGV5EeyL1IWM4_KcDg" className="com.company.model.conference.ConferenceRequest"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_EGjUannlEeyt49ZTry-jdA" name="conferenceRequestInput.choosenTransport" content="//Retrieve aggregated Transport using its DAO and persistenceId&#xD;&#xA;def transportVar = transportDAO.findByPersistenceId(conferenceRequestInput?.choosenTransport?.persistenceId_string?.trim() ? conferenceRequestInput.choosenTransport.persistenceId_string.toLong() : null)&#xD;&#xA;if (!transportVar) {&#xD;&#xA;&#x9;if (conferenceRequestInput?.choosenTransport?.persistenceId_string?.trim() ? conferenceRequestInput.choosenTransport.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Transport` with the persistence id &quot; + conferenceRequestInput?.choosenTransport?.persistenceId_string?.trim() ? conferenceRequestInput.choosenTransport.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return null&#xD;&#xA;}&#xD;&#xA;transportVar.name = conferenceRequestInput?.choosenTransport?.name&#xD;&#xA;transportVar.price = conferenceRequestInput?.choosenTransport?.price&#xD;&#xA;return transportVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.conference.Transport">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_EGjUa3nlEeyt49ZTry-jdA" name="conferenceRequestInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_EGjUbHnlEeyt49ZTry-jdA" name="transportDAO" content="transportDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.conference.TransportDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_EGjUbXnlEeyt49ZTry-jdA" type="JAVA_METHOD" expression="setChoosenTransport">
+              <inputTypes>com.company.model.conference.Transport</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_D8FsE3l9Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_D8FsFHl9Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_D8FsFXl9Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_D8FsF3l9Eeyz4IHadc4k3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_D8FsFnl9Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_D8FsGXl9Eeyz4IHadc4k3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_2Ld_YHl9Eeyz4IHadc4k3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_KDDvEHnlEeyt49ZTry-jdA" name="newForm" content="44746ea5-84dd-4270-a7ce-dbb5eba08ba0" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_D8FsGHl9Eeyz4IHadc4k3w"/>
+          <contract xmi:type="process:Contract" xmi:id="_D8FsGHl9Eeyz4IHadc4k3w">
+            <inputs xmi:type="process:ContractInput" xmi:id="_EGitUHnlEeyt49ZTry-jdA" name="conferenceRequestInput" type="COMPLEX" dataReference="conferenceRequest" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_EGitUXnlEeyt49ZTry-jdA" name="potentialTransports" type="COMPLEX" multiple="true" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitUnnlEeyt49ZTry-jdA" name="persistenceId_string" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitU3nlEeyt49ZTry-jdA" name="name" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitVHnlEeyt49ZTry-jdA" name="price" type="DECIMAL" createMode="false"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_EGitVXnlEeyt49ZTry-jdA" name="choosenTransport" type="COMPLEX" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitVnnlEeyt49ZTry-jdA" name="persistenceId_string" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitV3nlEeyt49ZTry-jdA" name="name" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_EGitWHnlEeyt49ZTry-jdA" name="price" type="DECIMAL" createMode="false"/>
+              </inputs>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitWXnlEeyt49ZTry-jdA" expression="!conferenceRequestInput?.potentialTransports || conferenceRequestInput?.potentialTransports?.persistenceId_string" errorMessage="Transport must reference an existing instance with a persistenceId for ConferenceRequest" name="aggregation_conferenceRequestInput_potentialTransports">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitWnnlEeyt49ZTry-jdA" expression="conferenceRequestInput?.potentialTransports?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Transport" name="mandatory_conferenceRequestInput_potentialTransports_name">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitW3nlEeyt49ZTry-jdA" expression="conferenceRequestInput?.potentialTransports?.price.flatten().every{it!=null}" errorMessage="price is mandatory for Transport" name="mandatory_conferenceRequestInput_potentialTransports_price">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitXHnlEeyt49ZTry-jdA" expression="!conferenceRequestInput?.choosenTransport || conferenceRequestInput?.choosenTransport?.persistenceId_string" errorMessage="Transport must reference an existing instance with a persistenceId for ConferenceRequest" name="aggregation_conferenceRequestInput_choosenTransport">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitXXnlEeyt49ZTry-jdA" expression="conferenceRequestInput?.choosenTransport?.name != null" errorMessage="name is mandatory for Transport" name="mandatory_conferenceRequestInput_choosenTransport_name">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_EGitXnnlEeyt49ZTry-jdA" expression="conferenceRequestInput?.choosenTransport?.price != null" errorMessage="price is mandatory for Transport" name="mandatory_conferenceRequestInput_choosenTransport_price">
+              <inputNames>conferenceRequestInput</inputNames>
+            </constraints>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_D8FsG3l9Eeyz4IHadc4k3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:EndEvent" xmi:id="_zz_xsHl9Eeyz4IHadc4k3w" name="End3" incoming="_z0FRQHl9Eeyz4IHadc4k3w">
@@ -1392,8 +1469,11 @@
       <data xmi:type="process:JavaObjectData" xmi:id="_gbx1QHl8Eeyz4IHadc4k3w" name="selectedAccommodations" multiple="true" dataType="_jR91UmV5EeyL1IWM4_KcDg" className="com.company.model.conference.Accommodation">
         <defaultValue xmi:type="expression:Expression" xmi:id="_gbx1QXl8Eeyz4IHadc4k3w" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_ZgoxAHndEey3-9SaT3RpWw" name="potentialTransports" multiple="true" dataType="_jR91VGV5EeyL1IWM4_KcDg" className="com.company.model.conference.Transport">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_ZgoxAXndEey3-9SaT3RpWw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_jR91NGV5EeyL1IWM4_KcDg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_2Ld_YXl9Eeyz4IHadc4k3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_aL0iYHnlEeyt49ZTry-jdA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_jR91NmV5EeyL1IWM4_KcDg">
         <targetForm xmi:type="expression:Expression" xmi:id="_jR91N2V5EeyL1IWM4_KcDg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -1673,7 +1753,7 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_iopEMGdOEeyHXYGfvL2JTw" type="5025">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_iopEMWdOEeyHXYGfvL2JTw" y="5"/>
               </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iomn9WdOEeyHXYGfvL2JTw" x="758" y="683"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iomn9WdOEeyHXYGfvL2JTw" x="830" y="683"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_dzF2MHlEEey6c-tWGG3Odg" type="3027" element="_dzEBAHlEEey6c-tWGG3Odg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_dzF2MnlEEey6c-tWGG3Odg" type="5017"/>
@@ -1715,7 +1795,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_D8G6MHl9Eeyz4IHadc4k3w" type="3005" element="_D8FFAHl9Eeyz4IHadc4k3w" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_D8G6Mnl9Eeyz4IHadc4k3w" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D8G6MXl9Eeyz4IHadc4k3w" x="590" y="673"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D8G6MXl9Eeyz4IHadc4k3w" x="590" y="673" width="158" height="79"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_z0Bm4Hl9Eeyz4IHadc4k3w" type="3003" element="_zz_xsHl9Eeyz4IHadc4k3w" fontName="Segoe UI">
               <children xmi:type="notation:DecorationNode" xmi:id="_z0Bm4nl9Eeyz4IHadc4k3w" type="5025">
