@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "choosingAccommodations",
   "name" : "choosingAccommodations",
-  "lastUpdate" : 1642633072990,
+  "lastUpdate" : 1643720498165,
   "rows" : [
     [
       {
@@ -151,7 +151,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Choose three accommodations:"
+                    "value" : "Choose three different accommodations:"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -498,7 +498,7 @@
                   },
                   "disabled" : {
                     "type" : "expression",
-                    "value" : "formInput.chosenAccommodationIds.length != 3"
+                    "value" : "isSameSelected"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -673,6 +673,28 @@
         "../API/bdm/businessData/com.company.model.conference.Accommodation?p=0&c=20&q=find"
       ],
       "advancedOptions" : { },
+      "exposed" : false
+    },
+    "isSameSelected" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.formInput.chosenAccommodationIds.length < 3) {",
+        "    return true;",
+        "}",
+        "",
+        "if ($data.formInput.chosenAccommodationIds.some(e => e === null)) {",
+        "    return true;",
+        "}",
+        "",
+        "var duplicatedList = $data.formInput.chosenAccommodationIds.slice();",
+        "var duplidupliList = duplicatedList.filter((value,index) => duplicatedList.indexOf(value) === index);",
+        "",
+        "",
+        "if (duplidupliList.length === duplicatedList.length) {",
+        "    return false;",
+        "}",
+        "return true;"
+      ],
       "exposed" : false
     }
   },

@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "conferenceRequestForm",
   "name" : "conferenceRequestForm",
-  "lastUpdate" : 1640557727731,
+  "lastUpdate" : 1643725758891,
   "rows" : [
     [
       {
@@ -580,7 +580,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Price (EUR)"
+                          "value" : "Price ($)"
                         },
                         "placeholder" : {
                           "type" : "constant"
