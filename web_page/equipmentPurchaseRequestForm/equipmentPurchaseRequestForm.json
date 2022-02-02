@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "equipmentPurchaseRequestForm",
   "name" : "equipmentPurchaseRequestForm",
-  "lastUpdate" : 1640559745739,
+  "lastUpdate" : 1642696147910,
   "rows" : [
     [
       {
@@ -161,7 +161,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Equipment Purchase Request"
+                    "value" : "Equipment purchase request"
                   },
                   "alignment" : {
                     "type" : "constant",

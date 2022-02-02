@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "maxBudgetEquipmentPurchaseRequestForm",
   "name" : "maxBudgetEquipmentPurchaseRequestForm",
-  "lastUpdate" : 1640625417147,
+  "lastUpdate" : 1643824771844,
   "rows" : [
     [
       {
@@ -151,7 +151,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Equipment Purchase Request"
+                    "value" : "Equipment purchase request"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -752,7 +752,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Max budget"
+                          "value" : "Max budget (EUR)"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -782,7 +782,8 @@
                           "value" : ""
                         },
                         "min" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : 1
                         },
                         "max" : {
                           "type" : "constant"

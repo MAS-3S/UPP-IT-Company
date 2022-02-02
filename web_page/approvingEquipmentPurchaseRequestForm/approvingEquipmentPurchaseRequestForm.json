@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "approvingEquipmentPurchaseRequestForm",
   "name" : "approvingEquipmentPurchaseRequestForm",
-  "lastUpdate" : 1640624671722,
+  "lastUpdate" : 1643824743574,
   "rows" : [
     [
       {
@@ -160,7 +160,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Equipment Purchase Request"
+                    "value" : "Equipment purchase request"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -822,7 +822,7 @@
                   },
                   "required" : {
                     "type" : "constant",
-                    "value" : false
+                    "value" : true
                   }
                 },
                 "reference" : "e1786a97-f4b0-452e-ada7-1bb57ca044c3",

@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "reviewingAndForwardingEquipmentPurchaseRequestForm",
   "name" : "reviewingAndForwardingEquipmentPurchaseRequestForm",
-  "lastUpdate" : 1640633006125,
+  "lastUpdate" : 1642696235045,
   "rows" : [
     [
       {
@@ -151,7 +151,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Equipment Purchase Request"
+                    "value" : "Equipment purchase request"
                   },
                   "alignment" : {
                     "type" : "constant",
