@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "jobApplicationCheckForm",
   "name" : "jobApplicationCheckForm",
-  "lastUpdate" : 1640432860014,
+  "lastUpdate" : 1642683016231,
   "rows" : [
     [
       {
@@ -613,164 +613,80 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "CV (PDF)"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
                         "type" : {
                           "type" : "constant",
-                          "value" : "text"
+                          "value" : "Process document"
                         },
-                        "dimension" : {
+                        "url" : {
                           "type" : "constant",
-                          "value" : 12
+                          "value" : ""
                         },
-                        "value" : {
+                        "document" : {
                           "type" : "variable",
-                          "value" : "jobApplication.cv"
+                          "value" : "context.cvDocument_ref"
                         },
-                        "required" : {
+                        "showPreview" : {
                           "type" : "constant",
                           "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "77c01058-525c-408e-b717-cb19d4383cca",
+                      "reference" : "2c331d98-812a-45ec-be4e-edeb1b2683de",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbFileViewer"
                     }
                   ],
                   [
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Letter (PDF)"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
                         "type" : {
                           "type" : "constant",
-                          "value" : "text"
+                          "value" : "Process document"
                         },
-                        "dimension" : {
+                        "url" : {
                           "type" : "constant",
-                          "value" : 12
+                          "value" : ""
                         },
-                        "value" : {
+                        "document" : {
                           "type" : "variable",
-                          "value" : "jobApplication.letter"
+                          "value" : "context.letterDocument_ref"
                         },
-                        "required" : {
+                        "showPreview" : {
                           "type" : "constant",
                           "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "00b2ba15-bb28-49be-b2f4-00df2451a57e",
+                      "reference" : "ab0a8039-f5a3-4943-a29e-4406f11ff316",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbFileViewer"
                     }
                   ]
                 ]
@@ -1050,11 +966,35 @@
         "\t\t\tcv: $data.jobApplication.cv !== undefined ? $data.jobApplication.cv : null,",
         "\t\t\tletter: $data.jobApplication.letter !== undefined ? $data.jobApplication.letter : null",
         "\t\t},",
-        "\t\tisJobApplicationApprovedInput: $data.formInput.isJobApplicationApprovedInput",
+        "\t\tisJobApplicationApprovedInput: $data.formInput.isJobApplicationApprovedInput,",
+        "\t\tcvDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.cvDocument_ref && $data.context.cvDocument_ref.id ? $data.context.cvDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.filename ? $data.context.cvDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.tempPath ? $data.context.cvDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.contentType ? $data.context.cvDocument_ref.newValue.contentType : null",
+        "\t\t},",
+        "\t\tletterDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.letterDocument_ref && $data.context.letterDocument_ref.id ? $data.context.letterDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.filename ? $data.context.letterDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.tempPath ? $data.context.letterDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.contentType ? $data.context.letterDocument_ref.newValue.contentType : null",
+        "\t\t}",
         "\t}",
         "}",
         "return {",
-        "\t\tisJobApplicationApprovedInput: $data.formInput.isJobApplicationApprovedInput",
+        "\t\tisJobApplicationApprovedInput: $data.formInput.isJobApplicationApprovedInput,",
+        "\t\tcvDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.cvDocument_ref && $data.context.cvDocument_ref.id ? $data.context.cvDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.filename ? $data.context.cvDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.tempPath ? $data.context.cvDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.contentType ? $data.context.cvDocument_ref.newValue.contentType : null",
+        "\t\t},",
+        "\t\tletterDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.letterDocument_ref && $data.context.letterDocument_ref.id ? $data.context.letterDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.filename ? $data.context.letterDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.tempPath ? $data.context.letterDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.contentType ? $data.context.letterDocument_ref.newValue.contentType : null",
+        "\t\t}",
         "\t}"
       ],
       "exposed" : false
