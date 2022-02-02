@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.2",
-  "id" : "newForm",
-  "name" : "newForm",
-  "lastUpdate" : 1642678949512,
+  "id" : "takeReservationByEmployee",
+  "name" : "takeReservationByEmployee",
+  "lastUpdate" : 1643725588715,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "41778cbd-364d-49a2-be38-fcbb4de7c40c",
+        "reference" : "19c6782a-e064-4a84-8d7f-2f2d02ff89fc",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "004fd71f-5fa8-425f-a55d-312c235a6961",
+              "reference" : "dd9574a1-524e-46d0-a780-6d0f9326b219",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "5360f298-e161-49f8-bc67-3073b2c96aac",
+              "reference" : "557597b5-e83b-4181-8d48-38f95dfea7e7",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -114,7 +114,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "be64754e-cabe-431d-9b2d-53b0993d69ca",
+        "reference" : "10331f71-1f84-4c2b-a176-2fbfa57ad637",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "00224f4f-edd7-44c9-8c77-3ca2d51b14cc",
+          "reference" : "a08071c9-207b-4e7a-983c-8ec1eaa2ea5c",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -151,7 +151,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Conference Request"
+                    "value" : "Conference Reservation"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -162,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "974b1389-c506-4495-b2d1-1b4c899215ea",
+                "reference" : "0f61372a-a99b-40e0-9706-15711d21fdce",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -194,7 +194,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "e95eb0c8-0401-4207-8566-0a66dc94a675",
+                "reference" : "a0077a28-ccdf-4da1-b4e1-0f41a72abb5c",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -222,7 +222,7 @@
                         },
                         "text" : {
                           "type" : "interpolation",
-                          "value" : "Potential Transports"
+                          "value" : "Accommodation"
                         },
                         "alignment" : {
                           "type" : "constant",
@@ -233,7 +233,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "7c8ff4e3-5894-4eec-bbf0-18b92265f84e",
+                      "reference" : "c091b55a-9db8-43ec-8707-f52189af1135",
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
@@ -250,8 +250,7 @@
                       },
                       "propertyValues" : {
                         "repeatedCollection" : {
-                          "type" : "variable",
-                          "value" : "conferenceRequest.potentialTransports"
+                          "type" : "variable"
                         },
                         "hidden" : {
                           "type" : "constant",
@@ -266,7 +265,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "0a47e4df-8ddc-4e26-9c70-3b21984462f3",
+                      "reference" : "f7d405a6-738a-4c5e-9db5-98eea88be687",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -321,7 +320,7 @@
                               },
                               "value" : {
                                 "type" : "variable",
-                                "value" : "$item.name"
+                                "value" : "conferenceReservation.accommodation.name"
                               },
                               "required" : {
                                 "type" : "constant",
@@ -346,7 +345,7 @@
                                 "value" : 1
                               }
                             },
-                            "reference" : "7e235f0b-2b3b-437f-9c41-32c07a1627c6",
+                            "reference" : "a6ce07c9-304e-4214-ac3e-ca97e38ba891",
                             "hasValidationError" : false,
                             "id" : "pbInput",
                             "description" : ""
@@ -356,10 +355,10 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "md" : 12,
+                              "md" : 6,
                               "sm" : 12,
                               "xs" : 12,
-                              "lg" : 12
+                              "lg" : 6
                             },
                             "propertyValues" : {
                               "labelHidden" : {
@@ -403,7 +402,7 @@
                               },
                               "value" : {
                                 "type" : "variable",
-                                "value" : "$item.price"
+                                "value" : "conferenceReservation.accommodation.price"
                               },
                               "required" : {
                                 "type" : "constant",
@@ -428,7 +427,87 @@
                                 "value" : 1
                               }
                             },
-                            "reference" : "482059ad-c302-43f0-805c-49039daa99b4",
+                            "reference" : "4b6e397b-0df3-4596-bc4c-b99b13305074",
+                            "hasValidationError" : false,
+                            "id" : "pbInput",
+                            "description" : ""
+                          },
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "md" : 6,
+                              "sm" : 12,
+                              "xs" : 12,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 1
+                              },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Days"
+                              },
+                              "placeholder" : {
+                                "type" : "constant"
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "number"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "conferenceReservation.accommodation.days"
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
+                              }
+                            },
+                            "reference" : "3ec73542-4b75-450d-a146-6a1035e977a2",
                             "hasValidationError" : false,
                             "id" : "pbInput",
                             "description" : ""
@@ -438,52 +517,82 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
                               "md" : 12,
+                              "sm" : 12,
+                              "xs" : 12,
                               "lg" : 12
                             },
                             "propertyValues" : {
-                              "cssClasses" : {
+                              "labelHidden" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : false
                               },
                               "hidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "labelHidden" : {
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 1
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : true
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Default label"
+                                "value" : "Address"
                               },
-                              "labelPosition" : {
+                              "placeholder" : {
+                                "type" : "constant"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "top"
+                                "value" : "text"
                               },
-                              "labelWidth" : {
+                              "dimension" : {
                                 "type" : "constant",
-                                "value" : 4
+                                "value" : 12
                               },
-                              "allowHTML" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "conferenceReservation.accommodation.address"
+                              },
+                              "required" : {
                                 "type" : "constant",
-                                "value" : true
+                                "value" : false
                               },
-                              "text" : {
-                                "type" : "interpolation",
+                              "minLength" : {
+                                "type" : "constant",
                                 "value" : ""
                               },
-                              "alignment" : {
+                              "maxLength" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : ""
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "af2cc477-b844-4475-b1ea-c45da2974b89",
+                            "reference" : "8ffbcc95-cc3d-4ec0-9ce0-706d7d978e14",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput",
+                            "description" : ""
                           }
                         ]
                       ]
@@ -513,7 +622,7 @@
                         },
                         "text" : {
                           "type" : "interpolation",
-                          "value" : "Choose transport"
+                          "value" : "Transport"
                         },
                         "alignment" : {
                           "type" : "constant",
@@ -524,7 +633,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "cb909975-f0db-476b-bd86-f7030449bae5",
+                      "reference" : "67465667-d42c-427f-9b6c-8d4191f3c958",
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
@@ -556,7 +665,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "181e65bc-739a-4c06-abe7-80ce34c43893",
+                      "reference" : "c1d401a7-1f07-4c76-b2f4-edf39a3a0f83",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -564,10 +673,10 @@
                           {
                             "type" : "component",
                             "dimension" : {
-                              "md" : 12,
+                              "md" : 6,
                               "sm" : 12,
                               "xs" : 12,
-                              "lg" : 12
+                              "lg" : 6
                             },
                             "propertyValues" : {
                               "labelHidden" : {
@@ -586,21 +695,24 @@
                                 "type" : "constant",
                                 "value" : ""
                               },
-                              "availableValues" : {
-                                "type" : "expression",
-                                "value" : "conferenceRequest.potentialTransports"
-                              },
                               "labelWidth" : {
                                 "type" : "constant",
                                 "value" : 1
                               },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Select transport:"
+                                "value" : "Name"
                               },
                               "placeholder" : {
+                                "type" : "constant"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "Select a Choosen Transport"
+                                "value" : "text"
                               },
                               "dimension" : {
                                 "type" : "constant",
@@ -608,31 +720,267 @@
                               },
                               "value" : {
                                 "type" : "variable",
-                                "value" : "conferenceRequest.choosenTransport"
+                                "value" : "conferenceReservation.transport.name"
                               },
                               "required" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "disabled" : {
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
+                              }
+                            },
+                            "reference" : "e9499180-0c82-481b-a4d0-461f95608da5",
+                            "hasValidationError" : false,
+                            "id" : "pbInput",
+                            "description" : ""
+                          },
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "md" : 6,
+                              "sm" : 12,
+                              "xs" : 12,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "labelHidden" : {
                                 "type" : "constant",
                                 "value" : false
                               },
-                              "displayedKey" : {
+                              "hidden" : {
                                 "type" : "constant",
-                                "value" : "name + \", price: \" + price + \"$\""
+                                "value" : false
                               },
-                              "returnedKey" : {
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 1
+                              },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Price"
+                              },
+                              "placeholder" : {
                                 "type" : "constant"
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "number"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "conferenceReservation.transport.price"
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "c8f204b7-4597-45ed-9a4b-be485bebab87",
+                            "reference" : "0dfa2f9d-d019-478b-85b4-f0b7d975e022",
                             "hasValidationError" : false,
-                            "id" : "pbSelect",
+                            "id" : "pbInput",
                             "description" : ""
                           }
                         ]
                       ]
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "showNow" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "inlineInput" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "dateFormat" : {
+                          "type" : "constant",
+                          "value" : "MM/dd/yyyy"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Date Time"
+                        },
+                        "type" : {
+                          "type" : "constant"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "todayLabel" : {
+                          "type" : "constant",
+                          "value" : "Today"
+                        },
+                        "timePlaceholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a time (h:mm:ss a)"
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "showToday" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "timeFormat" : {
+                          "type" : "constant",
+                          "value" : "h:mm:ss a"
+                        },
+                        "placeholder" : {
+                          "type" : "constant",
+                          "value" : "Enter a date (mm/dd/yyyy)"
+                        },
+                        "nowLabel" : {
+                          "type" : "constant",
+                          "value" : "Now"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "conferenceReservation.dateTime"
+                        },
+                        "withTimeZone" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "59ebc1f0-7446-4265-9e8a-0b3bce200ffd",
+                      "hasValidationError" : false,
+                      "id" : "pbDateTimePicker",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Take reservation"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "conferenceReservation.isAccepted"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        }
+                      },
+                      "reference" : "6cabb5c1-ec35-41a6-ae16-1b6b491f6485",
+                      "hasValidationError" : false,
+                      "id" : "pbCheckbox",
+                      "description" : ""
                     }
                   ]
                 ]
@@ -698,7 +1046,7 @@
                   },
                   "disabled" : {
                     "type" : "expression",
-                    "value" : "$form.$invalid"
+                    "value" : "!conferenceReservation.isAccepted"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -707,9 +1055,32 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
-                "reference" : "b9d8a633-4f7b-4172-bd9e-6b85547bb887",
+                "reference" : "6774eb04-471e-4d73-8f82-5b216cfb8e11",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -761,7 +1132,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "86a22aa3-f599-4eb3-92fa-a298a8e86fd4",
+                "reference" : "07eee921-e8f3-4d10-a065-02242d74192e",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -774,14 +1145,14 @@
   ],
   "assets" : [
     {
-      "id" : "9fe3c38e-e127-4d38-947f-985aead77879",
+      "id" : "067f4180-37e1-4a78-be41-67a4d162f407",
       "name" : "localization.json",
       "type" : "json",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "13156461-fd59-41dc-ab0a-9b964ffc77c5",
+      "id" : "a1d3c4e3-19a7-438c-82e0-696d75be3fcb",
       "name" : "style.css",
       "type" : "css",
       "order" : 0,
@@ -790,10 +1161,10 @@
   ],
   "inactiveAssets" : [ ],
   "variables" : {
-    "conferenceRequest" : {
+    "conferenceReservation" : {
       "type" : "url",
       "value" : [
-        "../{{context.conferenceRequest_ref.link}}"
+        "../{{context.conferenceReservation_ref.link}}"
       ],
       "exposed" : false
     },
@@ -822,20 +1193,24 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.conferenceRequest ){",
+        "if( $data.conferenceReservation ){",
         "\treturn {",
-        "\t\t//map conferenceRequest variable to expected task contract input",
-        "\t\tconferenceRequestInput: {",
-        "\t\t\tpotentialTransports: $data.conferenceRequest.potentialTransports.map( it => ({",
-        "\t\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null,",
-        "\t\t\t\tname: it.name !== undefined ? it.name : null,",
-        "\t\t\t\tprice: it.price !== undefined ? it.price : null",
-        "\t\t\t})),",
-        "\t\t\tchoosenTransport: $data.conferenceRequest.choosenTransport ? {",
-        "\t\t\t\tpersistenceId_string: $data.conferenceRequest.choosenTransport.persistenceId_string !== undefined ? $data.conferenceRequest.choosenTransport.persistenceId_string : null,",
-        "\t\t\t\tname: $data.conferenceRequest.choosenTransport.name !== undefined ? $data.conferenceRequest.choosenTransport.name : null,",
-        "\t\t\t\tprice: $data.conferenceRequest.choosenTransport.price !== undefined ? $data.conferenceRequest.choosenTransport.price : null",
-        "\t\t\t} : null",
+        "\t\t//map conferenceReservation variable to expected task contract input",
+        "\t\tconferenceReservationInput: {",
+        "\t\t\taccommodation: $data.conferenceReservation.accommodation ? {",
+        "\t\t\t\tpersistenceId_string: $data.conferenceReservation.accommodation.persistenceId_string !== undefined ? $data.conferenceReservation.accommodation.persistenceId_string : null,",
+        "\t\t\t\tname: $data.conferenceReservation.accommodation.name !== undefined ? $data.conferenceReservation.accommodation.name : null,",
+        "\t\t\t\tprice: $data.conferenceReservation.accommodation.price !== undefined ? $data.conferenceReservation.accommodation.price : null,",
+        "\t\t\t\taddress: $data.conferenceReservation.accommodation.address !== undefined ? $data.conferenceReservation.accommodation.address : null,",
+        "\t\t\t\tdays: $data.conferenceReservation.accommodation.days !== undefined ? $data.conferenceReservation.accommodation.days : null",
+        "\t\t\t} : null,",
+        "\t\t\ttransport: $data.conferenceReservation.transport ? {",
+        "\t\t\t\tpersistenceId_string: $data.conferenceReservation.transport.persistenceId_string !== undefined ? $data.conferenceReservation.transport.persistenceId_string : null,",
+        "\t\t\t\tname: $data.conferenceReservation.transport.name !== undefined ? $data.conferenceReservation.transport.name : null,",
+        "\t\t\t\tprice: $data.conferenceReservation.transport.price !== undefined ? $data.conferenceReservation.transport.price : null",
+        "\t\t\t} : null,",
+        "\t\t\tisAccepted: $data.conferenceReservation.isAccepted !== undefined ? $data.conferenceReservation.isAccepted : null,",
+        "\t\t\tdateTime: $data.conferenceReservation.dateTime !== undefined ? $data.conferenceReservation.dateTime : null",
         "\t\t}",
         "\t}",
         "}"
@@ -862,10 +1237,17 @@
         "id"
       ],
       "exposed" : false
+    },
+    "accommodation_query" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.conference.Accommodation?q=find&p=0&c=99"
+      ],
+      "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "44746ea5-84dd-4270-a7ce-dbb5eba08ba0",
+  "uuid" : "2e86c1ec-cbf9-4d6d-8802-7c1bcf173138",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

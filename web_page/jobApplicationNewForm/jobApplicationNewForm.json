@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "jobApplicationNewForm",
   "name" : "jobApplicationNewForm",
-  "lastUpdate" : 1642615517360,
+  "lastUpdate" : 1642682993337,
   "rows" : [
     [
       {
@@ -645,89 +645,137 @@
                   ],
                   [
                     {
-                      "type" : "component",
+                      "type" : "container",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "CV (PDF)"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
+                        "repeatedCollection" : {
                           "type" : "variable",
-                          "value" : "jobApplication.cv"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
                           "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "3ad89f39-514b-429c-91af-569f02bbf9fb",
+                      "reference" : "7ce3a0bb-bfc2-4274-b96b-bf233e7440f1",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbContainer",
+                      "rows" : [
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "Process document"
+                              },
+                              "url" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "document" : {
+                                "type" : "variable",
+                                "value" : "context.cvDocument_ref"
+                              },
+                              "showPreview" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "5a77abb7-e027-4870-bc51-f0d4aea9820b",
+                            "hasValidationError" : false,
+                            "id" : "pbFileViewer"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Upload CV (PDF)"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "placeholder" : {
+                                "type" : "interpolation",
+                                "value" : "Browse to upload the file..."
+                              },
+                              "url" : {
+                                "type" : "constant",
+                                "value" : "../API/formFileUpload"
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "context.cvDocument_ref.newValue"
+                              },
+                              "errorContent" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "5660e949-ab07-48d0-a295-bc7cc30a834b",
+                            "hasValidationError" : false,
+                            "id" : "pbUpload"
+                          }
+                        ]
+                      ]
                     }
                   ],
                   [
                     {
-                      "type" : "component",
+                      "type" : "container",
                       "dimension" : {
                         "xs" : 12,
                         "sm" : 12,
@@ -743,186 +791,116 @@
                           "type" : "constant",
                           "value" : false
                         },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "CV (PDF)"
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 4
-                        },
-                        "placeholder" : {
-                          "type" : "interpolation"
-                        },
-                        "url" : {
-                          "type" : "constant",
-                          "value" : "../API/formFileUpload"
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : ""
-                        },
-                        "errorContent" : {
+                        "repeatedCollection" : {
                           "type" : "variable",
                           "value" : ""
                         }
                       },
-                      "reference" : "d3fecc2d-fad7-494a-9ad3-87bbeb1ad838",
+                      "reference" : "936342c6-60f0-4695-8742-dc5a89efc901",
                       "hasValidationError" : false,
-                      "id" : "pbUpload"
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Letter (PDF)"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "jobApplication.letter"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
-                        }
-                      },
-                      "reference" : "81a2feb5-c5f6-4a90-aa13-813bd8d374a3",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
-                        "md" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Letter (PDF)"
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 4
-                        },
-                        "placeholder" : {
-                          "type" : "interpolation"
-                        },
-                        "url" : {
-                          "type" : "constant",
-                          "value" : "../API/formFileUpload"
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : ""
-                        },
-                        "errorContent" : {
-                          "type" : "variable",
-                          "value" : ""
-                        }
-                      },
-                      "reference" : "9730c582-6c65-4b5c-8a9f-f4fc4daf9810",
-                      "hasValidationError" : false,
-                      "id" : "pbUpload"
+                      "id" : "pbContainer",
+                      "rows" : [
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "Process document"
+                              },
+                              "url" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "document" : {
+                                "type" : "variable",
+                                "value" : "context.letterDocument_ref"
+                              },
+                              "showPreview" : {
+                                "type" : "constant",
+                                "value" : false
+                              }
+                            },
+                            "reference" : "02c75a6b-6847-4e77-9fc0-54bf0529511a",
+                            "hasValidationError" : false,
+                            "id" : "pbFileViewer"
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Upload Letter (PDF)"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "placeholder" : {
+                                "type" : "interpolation",
+                                "value" : "Browse to upload the file..."
+                              },
+                              "url" : {
+                                "type" : "constant",
+                                "value" : "../API/formFileUpload"
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "context.letterDocument_ref.newValue"
+                              },
+                              "errorContent" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "f18707b8-ef43-4707-a99b-c46262c5c0b3",
+                            "hasValidationError" : false,
+                            "id" : "pbUpload"
+                          }
+                        ]
+                      ]
                     }
                   ]
                 ]
@@ -1148,6 +1126,18 @@
         "\t\t\tcv: $data.jobApplication.cv !== undefined ? $data.jobApplication.cv : null,",
         "\t\t\tletter: $data.jobApplication.letter !== undefined ? $data.jobApplication.letter : null,",
         "\t\t\tisAccepted: false",
+        "\t\t},",
+        "\t\tcvDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.cvDocument_ref && $data.context.cvDocument_ref.id ? $data.context.cvDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.filename ? $data.context.cvDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.tempPath ? $data.context.cvDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.contentType ? $data.context.cvDocument_ref.newValue.contentType : null",
+        "\t\t},",
+        "\t\tletterDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.letterDocument_ref && $data.context.letterDocument_ref.id ? $data.context.letterDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.filename ? $data.context.letterDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.tempPath ? $data.context.letterDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.contentType ? $data.context.letterDocument_ref.newValue.contentType : null",
         "\t\t}",
         "\t}",
         "}",
@@ -1163,9 +1153,21 @@
         "\t\t\t\tpersistenceId_string: $data.jobApplication.jobLanguage.persistenceId_string !== undefined ? $data.jobApplication.jobLanguage.persistenceId_string : null,",
         "\t\t\t\tname: $data.jobApplication.jobLanguage.name !== undefined ? $data.jobApplication.jobLanguage.name : null",
         "\t\t\t} : null,",
-        "\t\t\tcv: $data.jobApplication.cv !== undefined ? $data.jobApplication.cv : null,",
-        "\t\t\tletter: $data.jobApplication.letter !== undefined ? $data.jobApplication.letter : null,",
+        "\t\t\tcv: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.filename ? $data.context.cvDocument_ref.newValue.filename : null,",
+        "\t\t\tletter: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.filename ? $data.context.letterDocument_ref.newValue.filename : null,",
         "\t\t\tisAccepted: false",
+        "\t\t},",
+        "\t\tcvDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.cvDocument_ref && $data.context.cvDocument_ref.id ? $data.context.cvDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.filename ? $data.context.cvDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.tempPath ? $data.context.cvDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.cvDocument_ref.newValue && $data.context.cvDocument_ref.newValue.contentType ? $data.context.cvDocument_ref.newValue.contentType : null",
+        "\t\t},",
+        "\t\tletterDocumentDocumentInput: {",
+        "\t\t\tid: $data.context.letterDocument_ref && $data.context.letterDocument_ref.id ? $data.context.letterDocument_ref.id.toString() : null,",
+        "\t\t\tfilename: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.filename ? $data.context.letterDocument_ref.newValue.filename : null,",
+        "\t\t\ttempPath: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.tempPath ? $data.context.letterDocument_ref.newValue.tempPath : null,",
+        "\t\t\tcontentType: $data.context.letterDocument_ref.newValue && $data.context.letterDocument_ref.newValue.contentType ? $data.context.letterDocument_ref.newValue.contentType : null",
         "\t\t}",
         "\t}"
       ],
