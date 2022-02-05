@@ -171,6 +171,15 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.jobapplication.JobApplicationStatistics">
+            <fields>
+                <field type="STRING" length="255" name="mostCommonCity" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="mostCommonTime" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.jobapplication.JobLanguage">
             <fields>
                 <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
