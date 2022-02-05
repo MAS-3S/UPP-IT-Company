@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "agreementForm",
   "name" : "agreementForm",
-  "lastUpdate" : 1643824881104,
+  "lastUpdate" : 1644021263094,
   "rows" : [
     [
       {
@@ -759,7 +759,7 @@
                   },
                   "required" : {
                     "type" : "constant",
-                    "value" : true
+                    "value" : false
                   }
                 },
                 "reference" : "f90026c6-6a45-433b-9e6f-7c8dc81bc21f",
@@ -795,7 +795,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Confirm"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -837,6 +837,29 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "acbfeb98-6523-410f-a851-523d2cfc43ee",

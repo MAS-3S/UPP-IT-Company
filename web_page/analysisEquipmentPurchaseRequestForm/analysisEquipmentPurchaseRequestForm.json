@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "analysisEquipmentPurchaseRequestForm",
   "name" : "analysisEquipmentPurchaseRequestForm",
-  "lastUpdate" : 1642696254667,
+  "lastUpdate" : 1644017715218,
   "rows" : [
     [
       {
@@ -1729,7 +1729,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Max budget"
+                          "value" : "Max budget (EUR)"
                         },
                         "placeholder" : {
                           "type" : "constant"

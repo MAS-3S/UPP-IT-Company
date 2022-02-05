@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "offerEntryForm",
   "name" : "offerEntryForm",
-  "lastUpdate" : 1643997518261,
+  "lastUpdate" : 1644017773651,
   "rows" : [
     [
       {
@@ -722,7 +722,7 @@
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Price"
+                                "value" : "Price (EUR)"
                               },
                               "placeholder" : {
                                 "type" : "constant"

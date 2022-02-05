@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "reviewingAndForwardingEquipmentPurchaseRequestForm",
   "name" : "reviewingAndForwardingEquipmentPurchaseRequestForm",
-  "lastUpdate" : 1642696235045,
+  "lastUpdate" : 1644017695203,
   "rows" : [
     [
       {
@@ -804,7 +804,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Max budget"
+                          "value" : "Max budget (EUR)"
                         },
                         "placeholder" : {
                           "type" : "constant"
