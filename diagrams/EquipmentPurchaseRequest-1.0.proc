@@ -1224,11 +1224,6 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_KwiIq4XkEeyJUPT-qusD_A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_R3b54IXkEeyJUPT-qusD_A" name="End4" incoming="_SgqxYIYWEeymFqErNN7vkQ">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_R3dvEYXkEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_R3dvEIXkEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_R3dvEoXkEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
-        </elements>
         <elements xmi:type="process:ScriptTask" xmi:id="_e3DK8IXkEeyJUPT-qusD_A" name="Setting the best offer" outgoing="_e3M78IXkEeyJUPT-qusD_A" incoming="_NvksoIXkEeyJUPT-qusD_A">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_e3DyAYXkEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_e3DyAIXkEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
@@ -1286,7 +1281,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_hotyk4XqEeyy5tA9dOPeeg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_hotykoXqEeyy5tA9dOPeeg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_iGxAiYXqEeyy5tA9dOPeeg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_QulEgIYdEeymFqErNN7vkQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_WMY5UIbTEeyAhs8m0ZO3rQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_iGxAiIXqEeyy5tA9dOPeeg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_iGxAi4XqEeyy5tA9dOPeeg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -1415,9 +1410,9 @@
                 <expression xmi:type="expression:Expression" xmi:id="_OSN0B4YWEeymFqErNN7vkQ" content="" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OSN0CIYWEeymFqErNN7vkQ" key="to">
-                <expression xmi:type="expression:Expression" xmi:id="_OSN0CYYWEeymFqErNN7vkQ" name="to()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xD;&#xA;&#xD;&#xA;String email = ''&#xD;&#xA;String username = ''&#xD;&#xA;&#xD;&#xA;try{&#xD;&#xA;&#x9;def processInitiatorManager = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xD;&#xA;&#x9;&#x9;&#x9;.getProcessInstance(activityInstanceId)&#xD;&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xD;&#xA;&#x9;username = processInitiatorManager.getUserName()&#xD;&#xA;}catch(UserNotFoundException e){&#xD;&#xA;&#x9;// Handle UserNotFoundException here&#xD;&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xD;&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;email = username + &quot;@bpm.com&quot;&#xD;&#xA;return email" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-mfQAIYXEeymFqErNN7vkQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-mfQAYYXEeymFqErNN7vkQ" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OSN0CYYWEeymFqErNN7vkQ" name="to()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xD;&#xA;&#xD;&#xA;String email = ''&#xD;&#xA;String username = ''&#xD;&#xA;&#xD;&#xA;try{&#xD;&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xD;&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xD;&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xD;&#xA;&#x9;def managerId = processInitiator.getManagerUserId();&#xD;&#xA;&#x9;def manager = apiAccessor.getIdentityAPI().getUser(managerId);&#xD;&#xA;&#x9;username = manager.getUserName();&#xD;&#xA;}catch(UserNotFoundException e){&#xD;&#xA;&#x9;// Handle UserNotFoundException here&#xD;&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xD;&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;email = username + &quot;@bpm.com&quot;&#xD;&#xA;return email" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_QS5WYIbTEeyAhs8m0ZO3rQ" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_QS5WYYbTEeyAhs8m0ZO3rQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OSN0DIYWEeymFqErNN7vkQ" key="bcc">
@@ -1455,11 +1450,10 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_OSN0JIYWEeymFqErNN7vkQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_OSN0JYYWEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:TextAnnotation" xmi:id="_pcXREIYWEeymFqErNN7vkQ" text="Da li treba da izda opremu koja je u magacinu? Da li ovde zavrsavam?"/>
-        <elements xmi:type="process:TextAnnotation" xmi:id="_AZ5uYIYYEeymFqErNN7vkQ" text="Mejl treba da se posalje nadrednjenom"/>
+        <elements xmi:type="process:TextAnnotation" xmi:id="_pcXREIYWEeymFqErNN7vkQ" text="Da li treba da izda opremu iz magacina? "/>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="__sCAEGc8EeyDu61EVN3I6g" name="ProcurementMember" actor="_KFOBcGc9EeyDu61EVN3I6g">
-        <elements xmi:type="process:Task" xmi:id="_AMX-IGdrEeyqxIypeSASrw" name="Request analysis" outgoing="_AMw5wIQ1EeyY3aQztWm5BQ" incoming="_-E2CIHlLEey79rlFHGoMyQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_AMX-IGdrEeyqxIypeSASrw" name="Request analysis" outgoing="_OlyYUIanEeyVxcz-3FgrGg" incoming="_-E2CIHlLEey79rlFHGoMyQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_AMfS4WdrEeyqxIypeSASrw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_AMfS4GdrEeyqxIypeSASrw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_AMfS4mdrEeyqxIypeSASrw" name="" content="" returnTypeFixed="true"/>
@@ -1795,22 +1789,12 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_9J4WNHoMEey7seu4rkl2KA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_9J4WNXoMEey7seu4rkl2KA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:ANDGateway" xmi:id="_AMel4IQ1EeyY3aQztWm5BQ" name="EquipmentPurchaseStart" outgoing="_e_3akIQ1EeyY3aQztWm5BQ _fsDyMIQ1EeyY3aQztWm5BQ" incoming="_AMw5wIQ1EeyY3aQztWm5BQ">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_AMgbEYQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_AMgbEIQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_AMgbEoQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-        </elements>
-        <elements xmi:type="process:ANDGateway" xmi:id="_DmkHIIQ1EeyY3aQztWm5BQ" name="EquipmentPurchaseEnd" outgoing="_h9vPAIQ3EeyY3aQztWm5BQ" incoming="_GOuxUIQ3EeyY3aQztWm5BQ _mrWNoIQ3EeyY3aQztWm5BQ _LgizwIQ4EeyY3aQztWm5BQ">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_DmlVQYQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_DmlVQIQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_DmlVQoQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
-        </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_lVAXsIQ1EeyY3aQztWm5BQ" name="doestExistUnvailableEquipmentInWarehouse" outgoing="_mrWNoIQ3EeyY3aQztWm5BQ _GvBkgIRDEeyY3aQztWm5BQ" incoming="_e_3akIQ1EeyY3aQztWm5BQ">
+        <elements xmi:type="process:XORGateway" xmi:id="_lVAXsIQ1EeyY3aQztWm5BQ" name="doestExistUnvailableEquipmentInWarehouse" outgoing="_mrWNoIQ3EeyY3aQztWm5BQ _GvBkgIRDEeyY3aQztWm5BQ" incoming="_OlyYUIanEeyVxcz-3FgrGg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_e_zwMoQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_e_zwMYQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_e_zwM4Q1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_mCnEkIQ1EeyY3aQztWm5BQ" name="doesExistNonexistentEquipmentInWarehouse" outgoing="_JYEEUIQ4EeyY3aQztWm5BQ _LgizwIQ4EeyY3aQztWm5BQ" incoming="_fsDyMIQ1EeyY3aQztWm5BQ">
+        <elements xmi:type="process:XORGateway" xmi:id="_mCnEkIQ1EeyY3aQztWm5BQ" name="doesExistNonexistentEquipmentInWarehouse" outgoing="_JYEEUIQ4EeyY3aQztWm5BQ _LgizwIQ4EeyY3aQztWm5BQ" incoming="_mrWNoIQ3EeyY3aQztWm5BQ _OoVEEIapEeyVxcz-3FgrGg _GOuxUIQ3EeyY3aQztWm5BQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_fr_gwoQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_fr_gwYQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_fr_gw4Q1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
@@ -1820,7 +1804,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_DisB0IQ3EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_DisB0oQ3EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_H6Ts4IQ4EeyY3aQztWm5BQ" name="Contact representatives of registered suppliers" outgoing="_rW0EMIYZEeymFqErNN7vkQ" incoming="_JYEEUIQ4EeyY3aQztWm5BQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_H6Ts4IQ4EeyY3aQztWm5BQ" name="Contact representatives of registered suppliers" outgoing="_9pztcIaoEeyVxcz-3FgrGg" incoming="_GCOCgIasEeyVxcz-3FgrGg" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_H6UT8YQ4EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_H6UT8IQ4EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_H6UT8oQ4EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
@@ -1931,13 +1915,26 @@
               <inputTypes>java.util.List</inputTypes>
             </operator>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="__DPxVYbDEeyAhs8m0ZO3rQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="__DPxVobDEeyAhs8m0ZO3rQ" name="equipmentForOrder" content="equipmentForOrder" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="__DPxV4bDEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="__DPxWIbDEeyAhs8m0ZO3rQ" name="equipmentForOrderInput" content="def equipmentList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;equipmentForOrderInput.each{&#xD;&#xA;&#x9;//Add Equipment instance&#xD;&#xA;&#x9;equipmentList.add({ currentEquipmentInput ->&#xD;&#xA;&#x9;&#x9;def equipmentVar = equipmentForOrder.find { it.persistenceId.toString() == currentEquipmentInput.persistenceId_string} ?: new com.company.model.equipment.Equipment()&#xD;&#xA;&#x9;&#x9;equipmentVar.type = {&#xD;&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated EquipmentType using its DAO and persistenceId&#xD;&#xA;&#x9;&#x9;&#x9;def equipmentTypeVar = equipmentTypeDAO.findByPersistenceId(currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;&#x9;if (!equipmentTypeVar) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EquipmentType` with the persistence id &quot; + currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;equipmentTypeVar.name = currentEquipmentInput.type?.name&#xD;&#xA;&#x9;&#x9;&#x9;return equipmentTypeVar}()&#xD;&#xA;&#x9;&#x9;equipmentVar.name = currentEquipmentInput.name&#xD;&#xA;&#x9;&#x9;equipmentVar.quantity = currentEquipmentInput.quantity&#xD;&#xA;&#x9;&#x9;return equipmentVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return equipmentList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="__DPxWYbDEeyAhs8m0ZO3rQ" name="equipmentForOrderInput" type="COMPLEX" multiple="true"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="__DPxWobDEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="__DPxW4bDEeyAhs8m0ZO3rQ" name="equipmentTypeDAO" content="equipmentTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentTypeDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="__DPxXIbDEeyAhs8m0ZO3rQ" type="ASSIGNMENT" expression="addAll">
+              <inputTypes>java.util.Collection</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_H6UT84Q4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_H6UT9IQ4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_H6UT9YQ4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_H6UT94Q4EeyY3aQztWm5BQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_H6UT9oQ4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_H6UT-YQ4EeyY3aQztWm5BQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_s9HvwIXOEeyJUPT-qusD_A" name="contactSuppliersForm" content="e31e804b-bda2-4d5d-a395-baef7ca1f53a" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="__yeO0IbDEeyAhs8m0ZO3rQ" name="contactSuppliersForm" content="a2b6992c-52d5-49a1-8390-4729a680ddc2" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <filters xmi:type="process:ActorFilter" xmi:id="_o9Zf8IXQEeyJUPT-qusD_A" name="Procurement member" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_o9Zf8YXQEeyJUPT-qusD_A" definitionId="bonita-actorfilter-single-user" version="1.0.0">
@@ -1992,83 +1989,29 @@
                 <inputs xmi:type="process:ContractInput" xmi:id="_oBJlIYXOEeyJUPT-qusD_A" name="quantity" type="INTEGER" createMode="false"/>
               </inputs>
             </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlIoXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.employeeName != null" errorMessage="employeeName is mandatory for EquipmentPurchaseRequest" name="mandatory_equipmentPurchaseRequestInput_employeeName">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
+            <inputs xmi:type="process:ContractInput" xmi:id="__DPKQIbDEeyAhs8m0ZO3rQ" name="equipmentForOrderInput" type="COMPLEX" multiple="true" dataReference="equipmentForOrder" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="__DPKQYbDEeyAhs8m0ZO3rQ" name="persistenceId_string" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="__DPKQobDEeyAhs8m0ZO3rQ" name="type" type="COMPLEX" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="__DPKQ4bDEeyAhs8m0ZO3rQ" name="persistenceId_string" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="__DPKRIbDEeyAhs8m0ZO3rQ" name="name" createMode="false"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="__DPKRYbDEeyAhs8m0ZO3rQ" name="name" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="__DPKRobDEeyAhs8m0ZO3rQ" name="quantity" type="INTEGER" createMode="false"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="__DPxUIbDEeyAhs8m0ZO3rQ" expression="equipmentForOrderInput?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentForOrderInput_type">
+              <inputNames>equipmentForOrderInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlI4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.employeeSurname != null" errorMessage="employeeSurname is mandatory for EquipmentPurchaseRequest" name="mandatory_equipmentPurchaseRequestInput_employeeSurname">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="__DPxUYbDEeyAhs8m0ZO3rQ" expression="equipmentForOrderInput?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentForOrderInput_type">
+              <inputNames>equipmentForOrderInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlJIXOEeyJUPT-qusD_A" expression="!equipmentPurchaseRequestInput?.equipment || equipmentPurchaseRequestInput?.equipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_equipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="__DPxUobDEeyAhs8m0ZO3rQ" expression="equipmentForOrderInput?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentForOrderInput_type_name">
+              <inputNames>equipmentForOrderInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlJYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.equipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="__DPxU4bDEeyAhs8m0ZO3rQ" expression="equipmentForOrderInput?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentForOrderInput_name">
+              <inputNames>equipmentForOrderInput</inputNames>
             </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlJoXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.equipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_equipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlJ4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.equipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_equipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlKIXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.equipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlKYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.equipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlKoXOEeyJUPT-qusD_A" expression="!equipmentPurchaseRequestInput?.availableEquipment || equipmentPurchaseRequestInput?.availableEquipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_availableEquipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlK4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.availableEquipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlLIXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.availableEquipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_availableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlLYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.availableEquipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlLoXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.availableEquipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlL4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.availableEquipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlMIXOEeyJUPT-qusD_A" expression="!equipmentPurchaseRequestInput?.unavailableEquipment || equipmentPurchaseRequestInput?.unavailableEquipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_unavailableEquipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlMYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlMoXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_unavailableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlM4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlNIXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlNYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlNoXOEeyJUPT-qusD_A" expression="!equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse || equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlN4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlOIXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlOYXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlOoXOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_oBJlO4XOEeyJUPT-qusD_A" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="__DPxVIbDEeyAhs8m0ZO3rQ" expression="equipmentForOrderInput?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentForOrderInput_quantity">
+              <inputNames>equipmentForOrderInput</inputNames>
             </constraints>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_H6UT-4Q4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -2242,284 +2185,70 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_TRJ4K4XfEeyJUPT-qusD_A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_eO6PQIYYEeymFqErNN7vkQ" name="Contact representatives of registered suppliers after refusal reduced quantities" outgoing="_sYBCgIYZEeymFqErNN7vkQ" incoming="_evbqgIQ4EeyY3aQztWm5BQ" overrideActorsOfTheLane="false">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_eO6PQYYYEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_eO6PQoYYEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_eO6PQ4YYEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PRIYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PRYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PRoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PR4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.employeeName" content="equipmentPurchaseRequestInput?.employeeName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PSIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PSYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setEmployeeName">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PSoYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PS4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PTIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PTYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.employeeSurname" content="equipmentPurchaseRequestInput?.employeeSurname" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PToYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PT4YYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setEmployeeSurname">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PUIYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PUYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PUoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PU4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.equipment" content="def equipmentList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;equipmentPurchaseRequestInput?.equipment.each{&#xD;&#xA;&#x9;//Add Equipment instance&#xD;&#xA;&#x9;equipmentList.add({ currentEquipmentInput ->&#xD;&#xA;&#x9;&#x9;def equipmentVar = equipmentDAO.findByPersistenceId(currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;if(!equipmentVar) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Equipment` with the persistence id &quot; + currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;equipmentVar.type = {&#xD;&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated EquipmentType using its DAO and persistenceId&#xD;&#xA;&#x9;&#x9;&#x9;def equipmentTypeVar = equipmentTypeDAO.findByPersistenceId(currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;&#x9;if (!equipmentTypeVar) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EquipmentType` with the persistence id &quot; + currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;equipmentTypeVar.name = currentEquipmentInput.type?.name&#xD;&#xA;&#x9;&#x9;&#x9;return equipmentTypeVar}()&#xD;&#xA;&#x9;&#x9;equipmentVar.name = currentEquipmentInput.name&#xD;&#xA;&#x9;&#x9;equipmentVar.quantity = currentEquipmentInput.quantity&#xD;&#xA;&#x9;&#x9;return equipmentVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return equipmentList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PVIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6PVYYYEeymFqErNN7vkQ" name="equipmentDAO" content="equipmentDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6PVoYYEeymFqErNN7vkQ" name="equipmentTypeDAO" content="equipmentTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentTypeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PV4YYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setEquipment">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PWIYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PWYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PWoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PW4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.maxBudget" content="equipmentPurchaseRequestInput?.maxBudget" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Double">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PXIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PXYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setMaxBudget">
-              <inputTypes>java.lang.Double</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PXoYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PX4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PYIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PYYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.isAccepted" content="equipmentPurchaseRequestInput?.isAccepted" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PYoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PY4YYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setIsAccepted">
-              <inputTypes>java.lang.Boolean</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PZIYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6PZYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PZoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PZ4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.explanation" content="equipmentPurchaseRequestInput?.explanation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PaIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PaYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setExplanation">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PaoYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6Pa4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PbIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PbYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.availableEquipment" content="def equipmentList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;equipmentPurchaseRequestInput?.availableEquipment.each{&#xD;&#xA;&#x9;//Add Equipment instance&#xD;&#xA;&#x9;equipmentList.add({ currentEquipmentInput ->&#xD;&#xA;&#x9;&#x9;def equipmentVar = equipmentDAO.findByPersistenceId(currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;if(!equipmentVar) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Equipment` with the persistence id &quot; + currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;equipmentVar.type = {&#xD;&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated EquipmentType using its DAO and persistenceId&#xD;&#xA;&#x9;&#x9;&#x9;def equipmentTypeVar = equipmentTypeDAO.findByPersistenceId(currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;&#x9;if (!equipmentTypeVar) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EquipmentType` with the persistence id &quot; + currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;equipmentTypeVar.name = currentEquipmentInput.type?.name&#xD;&#xA;&#x9;&#x9;&#x9;return equipmentTypeVar}()&#xD;&#xA;&#x9;&#x9;equipmentVar.name = currentEquipmentInput.name&#xD;&#xA;&#x9;&#x9;equipmentVar.quantity = currentEquipmentInput.quantity&#xD;&#xA;&#x9;&#x9;return equipmentVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return equipmentList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PboYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6Pb4YYEeymFqErNN7vkQ" name="equipmentDAO" content="equipmentDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6PcIYYEeymFqErNN7vkQ" name="equipmentTypeDAO" content="equipmentTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentTypeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PcYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setAvailableEquipment">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PcoYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6Pc4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PdIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PdYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.unavailableEquipment" content="def equipmentList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;equipmentPurchaseRequestInput?.unavailableEquipment.each{&#xD;&#xA;&#x9;//Add Equipment instance&#xD;&#xA;&#x9;equipmentList.add({ currentEquipmentInput ->&#xD;&#xA;&#x9;&#x9;def equipmentVar = equipmentDAO.findByPersistenceId(currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;if(!equipmentVar) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Equipment` with the persistence id &quot; + currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;equipmentVar.type = {&#xD;&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated EquipmentType using its DAO and persistenceId&#xD;&#xA;&#x9;&#x9;&#x9;def equipmentTypeVar = equipmentTypeDAO.findByPersistenceId(currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;&#x9;if (!equipmentTypeVar) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EquipmentType` with the persistence id &quot; + currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;equipmentTypeVar.name = currentEquipmentInput.type?.name&#xD;&#xA;&#x9;&#x9;&#x9;return equipmentTypeVar}()&#xD;&#xA;&#x9;&#x9;equipmentVar.name = currentEquipmentInput.name&#xD;&#xA;&#x9;&#x9;equipmentVar.quantity = currentEquipmentInput.quantity&#xD;&#xA;&#x9;&#x9;return equipmentVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return equipmentList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PdoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6Pd4YYEeymFqErNN7vkQ" name="equipmentDAO" content="equipmentDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6PeIYYEeymFqErNN7vkQ" name="equipmentTypeDAO" content="equipmentTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentTypeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PeYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setUnavailableEquipment">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_eO6PeoYYEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_eO6Pe4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" content="equipmentPurchaseRequest" type="TYPE_VARIABLE" returnType="com.company.model.equipment.EquipmentPurchaseRequest">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_eO6PfIYYEeymFqErNN7vkQ" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_eO6PfYYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput.nonexistentRequiredEquipmentInWarehouse" content="def equipmentList = []&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse.each{&#xD;&#xA;&#x9;//Add Equipment instance&#xD;&#xA;&#x9;equipmentList.add({ currentEquipmentInput ->&#xD;&#xA;&#x9;&#x9;def equipmentVar = equipmentDAO.findByPersistenceId(currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;if(!equipmentVar) {&#xD;&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Equipment` with the persistence id &quot; + currentEquipmentInput.persistenceId_string?.trim() ? currentEquipmentInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;equipmentVar.type = {&#xD;&#xA;&#x9;&#x9;&#x9;//Retrieve aggregated EquipmentType using its DAO and persistenceId&#xD;&#xA;&#x9;&#x9;&#x9;def equipmentTypeVar = equipmentTypeDAO.findByPersistenceId(currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null)&#xD;&#xA;&#x9;&#x9;&#x9;if (!equipmentTypeVar) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `EquipmentType` with the persistence id &quot; + currentEquipmentInput.type?.persistenceId_string?.trim() ? currentEquipmentInput.type.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return null&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;equipmentTypeVar.name = currentEquipmentInput.type?.name&#xD;&#xA;&#x9;&#x9;&#x9;return equipmentTypeVar}()&#xD;&#xA;&#x9;&#x9;equipmentVar.name = currentEquipmentInput.name&#xD;&#xA;&#x9;&#x9;equipmentVar.quantity = currentEquipmentInput.quantity&#xD;&#xA;&#x9;&#x9;return equipmentVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return equipmentList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_eO6PfoYYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6Pf4YYEeymFqErNN7vkQ" name="equipmentDAO" content="equipmentDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_eO6PgIYYEeymFqErNN7vkQ" name="equipmentTypeDAO" content="equipmentTypeDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.equipment.EquipmentTypeDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_eO6PgYYYEeymFqErNN7vkQ" type="JAVA_METHOD" expression="setNonexistentRequiredEquipmentInWarehouse">
-              <inputTypes>java.util.List</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_Q2lRUIYaEeymFqErNN7vkQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_Q2lRUYYaEeymFqErNN7vkQ" name="rejectedReduction" content="rejectedReduction" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:Data" xmi:id="_SPsZUIYaEeymFqErNN7vkQ" name="rejectedReduction" dataType="_IAoOjGaLEeyNNo0v7zapHw"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_Q2lRUoYaEeymFqErNN7vkQ" name="newScript()" content="return true;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean"/>
-            <operator xmi:type="expression:Operator" xmi:id="_Q2lRU4YaEeymFqErNN7vkQ" type="ASSIGNMENT"/>
-          </operations>
-          <loopCondition xmi:type="expression:Expression" xmi:id="_eO6PgoYYEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <loopMaximum xmi:type="expression:Expression" xmi:id="_eO6Pg4YYEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_eO6PhIYYEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <iteratorExpression xmi:type="expression:Expression" xmi:id="_eO6PhYYYEeymFqErNN7vkQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
-          <completionCondition xmi:type="expression:Expression" xmi:id="_eO6PhoYYEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_eO6Ph4YYEeymFqErNN7vkQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DJMwwIYZEeymFqErNN7vkQ" name="contanctSuppliersAfterRefusalReducedQuantitiesForm" content="cda3cb60-5f53-4dbd-9ac2-13c8655cacaf" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
-          </formMapping>
-          <filters xmi:type="process:ActorFilter" xmi:id="_eO6PiYYYEeymFqErNN7vkQ" name="Procurement member" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_eO6PioYYEeymFqErNN7vkQ" definitionId="bonita-actorfilter-single-user" version="1.0.0">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_eO6Pi4YYEeymFqErNN7vkQ" key="userId">
-                <expression xmi:type="expression:Expression" xmi:id="_eO6PjIYYEeymFqErNN7vkQ" name="userId()" content="return chosenProcurementUserId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:Data" xmi:id="_eO6PjYYYEeymFqErNN7vkQ" name="chosenProcurementUserId" dataType="_IAoOjmaLEeyNNo0v7zapHw"/>
-                </expression>
-              </parameters>
-            </configuration>
-          </filters>
-          <contract xmi:type="process:Contract" xmi:id="_eO6PjoYYEeymFqErNN7vkQ">
-            <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pj4YYEeymFqErNN7vkQ" name="equipmentPurchaseRequestInput" type="COMPLEX" dataReference="equipmentPurchaseRequest" createMode="false">
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PkIYYEeymFqErNN7vkQ" name="employeeName" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PkYYYEeymFqErNN7vkQ" name="employeeSurname" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PkoYYEeymFqErNN7vkQ" name="equipment" type="COMPLEX" multiple="true" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pk4YYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PlIYYEeymFqErNN7vkQ" name="type" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6PlYYYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6PloYYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pl4YYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PmIYYEeymFqErNN7vkQ" name="quantity" type="INTEGER" createMode="false"/>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PmYYYEeymFqErNN7vkQ" name="maxBudget" type="DECIMAL" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PmoYYEeymFqErNN7vkQ" name="isAccepted" type="BOOLEAN" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pm4YYEeymFqErNN7vkQ" name="explanation" createMode="false"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PnIYYEeymFqErNN7vkQ" name="availableEquipment" type="COMPLEX" multiple="true" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PnYYYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PnoYYEeymFqErNN7vkQ" name="type" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pn4YYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6PoIYYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PoYYYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PooYYEeymFqErNN7vkQ" name="quantity" type="INTEGER" createMode="false"/>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6Po4YYEeymFqErNN7vkQ" name="unavailableEquipment" type="COMPLEX" multiple="true" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PpIYYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PpYYYEeymFqErNN7vkQ" name="type" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6PpoYYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pp4YYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PqIYYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PqYYYEeymFqErNN7vkQ" name="quantity" type="INTEGER" createMode="false"/>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_eO6PqoYYEeymFqErNN7vkQ" name="nonexistentRequiredEquipmentInWarehouse" type="COMPLEX" multiple="true" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pq4YYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PrIYYEeymFqErNN7vkQ" name="type" type="COMPLEX" createMode="false">
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6PrYYYEeymFqErNN7vkQ" name="persistenceId_string" createMode="false"/>
-                  <inputs xmi:type="process:ContractInput" xmi:id="_eO6ProYYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                </inputs>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6Pr4YYEeymFqErNN7vkQ" name="name" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_eO6PsIYYEeymFqErNN7vkQ" name="quantity" type="INTEGER" createMode="false"/>
-              </inputs>
-            </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PsYYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.employeeName != null" errorMessage="employeeName is mandatory for EquipmentPurchaseRequest" name="mandatory_equipmentPurchaseRequestInput_employeeName">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PsoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.employeeSurname != null" errorMessage="employeeSurname is mandatory for EquipmentPurchaseRequest" name="mandatory_equipmentPurchaseRequestInput_employeeSurname">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Ps4YYEeymFqErNN7vkQ" expression="!equipmentPurchaseRequestInput?.equipment || equipmentPurchaseRequestInput?.equipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_equipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PtIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.equipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PtYYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.equipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_equipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PtoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.equipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_equipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Pt4YYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.equipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PuIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.equipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_equipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PuYYYEeymFqErNN7vkQ" expression="!equipmentPurchaseRequestInput?.availableEquipment || equipmentPurchaseRequestInput?.availableEquipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_availableEquipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PuoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.availableEquipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Pu4YYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.availableEquipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_availableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PvIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.availableEquipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PvYYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.availableEquipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PvoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.availableEquipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_availableEquipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Pv4YYEeymFqErNN7vkQ" expression="!equipmentPurchaseRequestInput?.unavailableEquipment || equipmentPurchaseRequestInput?.unavailableEquipment?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_unavailableEquipment">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PwIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PwYYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_unavailableEquipment_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PwoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Pw4YYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PxIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.unavailableEquipment?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_unavailableEquipment_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PxYYYEeymFqErNN7vkQ" expression="!equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse || equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.persistenceId_string" errorMessage="Equipment must reference an existing instance with a persistenceId for EquipmentPurchaseRequest" name="aggregation_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PxoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type.flatten().every{it!=null}" errorMessage="EquipmentType is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6Px4YYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type.flatten().every{!it || it.persistenceId_string}" errorMessage="EquipmentType must reference an existing instance with a persistenceId for Equipment" name="aggregation_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PyIYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.type?.name.flatten().every{it!=null}" errorMessage="name is mandatory for EquipmentType" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_type_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PyYYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.name.flatten().every{it!=null}" errorMessage="name is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_name">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_eO6PyoYYEeymFqErNN7vkQ" expression="equipmentPurchaseRequestInput?.nonexistentRequiredEquipmentInWarehouse?.quantity.flatten().every{it!=null}" errorMessage="quantity is mandatory for Equipment" name="mandatory_equipmentPurchaseRequestInput_nonexistentRequiredEquipmentInWarehouse_quantity">
-              <inputNames>equipmentPurchaseRequestInput</inputNames>
-            </constraints>
-          </contract>
-          <expectedDuration xmi:type="expression:Expression" xmi:id="_eO6Py4YYEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        <elements xmi:type="process:TextAnnotation" xmi:id="_jzHh4IYcEeymFqErNN7vkQ" text="Za sad nije spojeno nakon placanja"/>
+        <elements xmi:type="process:XORGateway" xmi:id="_L3iCUIanEeyVxcz-3FgrGg" name="EquipmentPurchaseEnd" outgoing="_h9vPAIQ3EeyY3aQztWm5BQ" incoming="_mw5xIIaqEeyVxcz-3FgrGg _SgqxYIYWEeymFqErNN7vkQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_DmlVQYQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_DmlVQIQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_DmlVQoQ1EeyY3aQztWm5BQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_nCFfoIYZEeymFqErNN7vkQ" name="Contact suppliers" outgoing="_MrKdkIXJEeyzmqi6MScrmQ" incoming="_rW0EMIYZEeymFqErNN7vkQ _sYBCgIYZEeymFqErNN7vkQ">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_nCGGsYYZEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_nCGGsIYZEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_nCGGsoYZEeymFqErNN7vkQ" name="" content="" returnTypeFixed="true"/>
+        <elements xmi:type="process:ScriptTask" xmi:id="_3RTTQIaoEeyVxcz-3FgrGg" name="Adding unavailable equipment" outgoing="_OoVEEIapEeyVxcz-3FgrGg" incoming="_evbqgIQ4EeyY3aQztWm5BQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_3RT6UYaoEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_3RT6UIaoEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_3RT6UoaoEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_Ri5QYIasEeyVxcz-3FgrGg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Ri5QYYasEeyVxcz-3FgrGg" name="equipmentForOrder" content="equipmentForOrder" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1HyDMIbCEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Ri5QYoasEeyVxcz-3FgrGg" name="newScript()" content="return unavailableEquipment;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_3OgfIIbCEeyAhs8m0ZO3rQ" name="unavailableEquipment" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Ri5QY4asEeyVxcz-3FgrGg" type="ASSIGNMENT" expression="addAll">
+              <inputTypes>java.util.Collection</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_3RT6U4aoEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_3RT6VIaoEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_3RT6VYaoEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_3RT6V4aoEeyVxcz-3FgrGg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_3RT6VoaoEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:TextAnnotation" xmi:id="_jzHh4IYcEeymFqErNN7vkQ" text="Za sad se nikad nece izvrsiti"/>
+        <elements xmi:type="process:ScriptTask" xmi:id="_AS7EwIapEeyVxcz-3FgrGg" name="Adding nonexistent equipment" outgoing="_AS_9QIapEeyVxcz-3FgrGg" incoming="_JYEEUIQ4EeyY3aQztWm5BQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_AS7r0YapEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_AS7r0IapEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_AS7r0oapEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_XvhKsIasEeyVxcz-3FgrGg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_XvhKsYasEeyVxcz-3FgrGg" name="equipmentForOrder" content="equipmentForOrder" type="TYPE_VARIABLE" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_4nzNUIbCEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_XvhKsoasEeyVxcz-3FgrGg" name="newScript()" content="//import com.company.model.equipment.Equipment&#xD;&#xA;//&#xD;&#xA;//List&lt;Equipment> result = new ArrayList&lt;Equipment>();&#xD;&#xA;//&#xD;&#xA;//for (Equipment equipment: equipmentForOrder) {&#xD;&#xA;//&#x9;result.add(equipment);&#xD;&#xA;//}&#xD;&#xA;//result.addAll(nonexistentRequiredEquipmentInWarehouse);&#xD;&#xA;&#xD;&#xA;return nonexistentRequiredEquipmentInWarehouse;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fWTecIbDEeyAhs8m0ZO3rQ" name="nonexistentRequiredEquipmentInWarehouse" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_XvhKs4asEeyVxcz-3FgrGg" type="JAVA_METHOD" expression="addAll">
+              <inputTypes>java.util.Collection</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_AS7r04apEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_AS7r1IapEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_AS7r1YapEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_AS7r14apEeyVxcz-3FgrGg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_AS7r1oapEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="_mws80IaqEeyVxcz-3FgrGg" name="doesExistUnavailableEquipmentAndDoesDoesAgreeFalse" outgoing="_mw5xIIaqEeyVxcz-3FgrGg _0anIEIaqEeyVxcz-3FgrGg" incoming="_LgizwIQ4EeyY3aQztWm5BQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_mwwnMYaqEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_mwwnMIaqEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_mwwnMoaqEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="_GCHU0IasEeyVxcz-3FgrGg" name="Merging" outgoing="_GCOCgIasEeyVxcz-3FgrGg" incoming="_AS_9QIapEeyVxcz-3FgrGg _0anIEIaqEeyVxcz-3FgrGg">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_GCH74YasEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_GCH74IasEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_GCH74oasEeyVxcz-3FgrGg" name="" content="" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_sFWP0IRFEeyY3aQztWm5BQ" name="SupplierMember" actor="_P_FIsIRFEeyY3aQztWm5BQ">
         <elements xmi:type="process:Task" xmi:id="_pkkWAIXCEeyzmqi6MScrmQ" name="Offer entry" outgoing="_eYbukIXfEeyJUPT-qusD_A" incoming="_NYuHIIXJEeyzmqi6MScrmQ" type="PARALLEL" collectionDataToMultiInstantiate="_7rsokIXEEeyzmqi6MScrmQ" outputData="_gc6-kIXOEeyJUPT-qusD_A" listDataContainingOutputResults="_C3ACkIXOEeyJUPT-qusD_A" storeOutput="true" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_pkp1kIXCEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_pkpOgIXCEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_pkp1kYXCEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
-          <data xmi:type="process:JavaObjectData" xmi:id="_EB_TMIXHEeyzmqi6MScrmQ" name="singleOffer" dataType="_IAoOkmaLEeyNNo0v7zapHw" className="java.util.List">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_EB_TMYXHEeyzmqi6MScrmQ" content="" returnType="java.util.List"/>
-          </data>
-          <data xmi:type="process:JavaObjectData" xmi:id="_b4VZEIXOEeyJUPT-qusD_A" name="oneOfer" dataType="_IAoOkmaLEeyNNo0v7zapHw" className="com.company.model.equipment.Offer">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_b4VZEYXOEeyJUPT-qusD_A" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.equipment.Offer"/>
-          </data>
           <data xmi:type="process:JavaObjectData" xmi:id="_gc6-kIXOEeyJUPT-qusD_A" name="oneOffer" dataType="_IAoOkmaLEeyNNo0v7zapHw" className="com.company.model.equipment.Offer">
             <defaultValue xmi:type="expression:Expression" xmi:id="_gc6-kYXOEeyJUPT-qusD_A" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.equipment.Offer"/>
           </data>
@@ -2603,7 +2332,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_pkp1moXCEeyzmqi6MScrmQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:ScriptTask" xmi:id="_BAzIMIXJEeyzmqi6MScrmQ" name="Offer creating" outgoing="_NYuHIIXJEeyzmqi6MScrmQ" incoming="_MrKdkIXJEeyzmqi6MScrmQ">
+        <elements xmi:type="process:ScriptTask" xmi:id="_BAzIMIXJEeyzmqi6MScrmQ" name="Creating offer" outgoing="_NYuHIIXJEeyzmqi6MScrmQ" incoming="_9pztcIaoEeyVxcz-3FgrGg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_BAzvQYXJEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_BAzvQIXJEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_BAzvQoXJEeyzmqi6MScrmQ" name="" content="" returnTypeFixed="true"/>
@@ -2611,11 +2340,9 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_iVX1UYXLEeyoO6-U93tdbg" name="offers" content="offers" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rom9cIXaEeyJUPT-qusD_A" name="offers" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Offer"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_iVX1UoXLEeyoO6-U93tdbg" name="newScript()" content="import com.company.model.equipment.Equipment&#xD;&#xA;import com.company.model.equipment.Offer&#xD;&#xA;import com.company.model.equipment.OfferItem&#xD;&#xA;&#xD;&#xA;List&lt;OfferItem> offerItems = new ArrayList&lt;OfferItem>();&#xD;&#xA;List&lt;Offer> result = new ArrayList&lt;Offer>();&#xD;&#xA;List&lt;Equipment> equipments = new ArrayList&lt;Equipment>();&#xD;&#xA;&#xD;&#xA;if (rejectedReduction) { &#xD;&#xA;&#x9;equipments.addAll(unavailableEquipment);&#xD;&#xA;} else {&#xD;&#xA;&#x9;equipments.addAll(nonexistentRequiredEquipmentInWarehouse);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;for (Equipment equipment : equipments) {&#xD;&#xA;&#x9;OfferItem offerItem = new OfferItem();&#xD;&#xA;&#x9;offerItem.setEquipment(equipment);&#xD;&#xA;&#x9;offerItem.setPrice(0);&#xD;&#xA;&#x9;offerItems.add(offerItem);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;for (Long supplierId: suppliersList) {&#xD;&#xA;&#x9;Offer offer = new Offer();&#xD;&#xA;&#x9;offer.setSupplierId(supplierId);&#xD;&#xA;&#x9;offer.setOfferItems(offerItems);&#xD;&#xA;&#x9;result.add(offer);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return result;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rX3XoIYaEeymFqErNN7vkQ" name="unavailableEquipment" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_rX3-sIYaEeymFqErNN7vkQ" name="rejectedReduction" dataType="_IAoOjGaLEeyNNo0v7zapHw"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rX3-sYYaEeymFqErNN7vkQ" name="nonexistentRequiredEquipmentInWarehouse" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_rX3-soYaEeymFqErNN7vkQ" name="suppliersList" multiple="true" dataType="_IAoOj2aLEeyNNo0v7zapHw"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_iVX1UoXLEeyoO6-U93tdbg" name="newScript()" content="import com.company.model.equipment.Equipment&#xD;&#xA;import com.company.model.equipment.Offer&#xD;&#xA;import com.company.model.equipment.OfferItem&#xD;&#xA;&#xD;&#xA;List&lt;OfferItem> offerItems = new ArrayList&lt;OfferItem>();&#xD;&#xA;List&lt;Offer> result = new ArrayList&lt;Offer>();&#xD;&#xA;List&lt;Equipment> equipments = new ArrayList&lt;Equipment>();&#xD;&#xA;&#xD;&#xA;for (Equipment equipment : equipmentForOrder) {&#xD;&#xA;&#x9;OfferItem offerItem = new OfferItem();&#xD;&#xA;&#x9;offerItem.setEquipment(equipment);&#xD;&#xA;&#x9;offerItem.setPrice(0);&#xD;&#xA;&#x9;offerItems.add(offerItem);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;for (Long supplierId: suppliersList) {&#xD;&#xA;&#x9;Offer offer = new Offer();&#xD;&#xA;&#x9;offer.setSupplierId(supplierId);&#xD;&#xA;&#x9;offer.setOfferItems(offerItems);&#xD;&#xA;&#x9;result.add(offer);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return result;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_CoZIgIbDEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_CoZIgYbDEeyAhs8m0ZO3rQ" name="suppliersList" multiple="true" dataType="_IAoOj2aLEeyNNo0v7zapHw"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_iVX1U4XLEeyoO6-U93tdbg" type="ASSIGNMENT"/>
           </operations>
@@ -2630,7 +2357,6 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_oayI0IXVEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_oayI0oXVEeyJUPT-qusD_A" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:TextAnnotation" xmi:id="_mKvgkIYcEeymFqErNN7vkQ" text="Izgleda da uslov nije kako treba u slucaju da se oba prethodna koraka pre gateway-a izvrsavaju. PRELEPI VREDNOSTI, verovatno treba paralelno nekako"/>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_BOkqwGaWEeyNNo0v7zapHw" name="equipmentPurchaseRequest" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.EquipmentPurchaseRequest">
         <defaultValue xmi:type="expression:Expression" xmi:id="_xuog0GcrEeyi-bsDpEyfpQ" name="" content="" interpreter="GROOVY"/>
@@ -2680,6 +2406,9 @@
       <data xmi:type="process:Data" xmi:id="_Ovm9wIYaEeymFqErNN7vkQ" name="rejectedReduction" dataType="_IAoOjGaLEeyNNo0v7zapHw">
         <defaultValue xmi:type="expression:Expression" xmi:id="_Ovm9wYYaEeymFqErNN7vkQ" name="false" content="false" returnType="java.lang.Boolean"/>
       </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_y-xIQIbCEeyAhs8m0ZO3rQ" name="equipmentForOrder" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_y-xIQYbCEeyAhs8m0ZO3rQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
       <connectors xmi:type="process:Connector" xmi:id="_a1XRcIXUEeyJUPT-qusD_A" name="setSuppliers" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
         <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_a1XRcYXUEeyJUPT-qusD_A" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.12.0-004">
           <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_a1XRcoXUEeyJUPT-qusD_A" key="script">
@@ -2705,7 +2434,7 @@
         </outputs>
       </connectors>
       <formMapping xmi:type="process:FormMapping" xmi:id="_IAoOdGaLEeyNNo0v7zapHw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_QulEgYYdEeymFqErNN7vkQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_WMY5UYbTEeyAhs8m0ZO3rQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_IAoOdmaLEeyNNo0v7zapHw">
         <targetForm xmi:type="expression:Expression" xmi:id="_IAoOd2aLEeyNNo0v7zapHw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -2746,7 +2475,7 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_-E2CIHlLEey79rlFHGoMyQ" target="_AMX-IGdrEeyqxIypeSASrw" source="_vEUm8Gc8EeyDu61EVN3I6g">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_-E2CIXlLEey79rlFHGoMyQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_-E2CInlLEey79rlFHGoMyQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_-E2CInlLEey79rlFHGoMyQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_BeEvEHoNEey7seu4rkl2KA" target="_9J4WAHoMEey7seu4rkl2KA" source="_KyyDYHoHEey7seu4rkl2KA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_BeEvEXoNEey7seu4rkl2KA"/>
@@ -2756,43 +2485,31 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_B9G0cXoNEey7seu4rkl2KA"/>
         <condition xmi:type="expression:Expression" xmi:id="_B9G0cnoNEey7seu4rkl2KA" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_AMw5wIQ1EeyY3aQztWm5BQ" target="_AMel4IQ1EeyY3aQztWm5BQ" source="_AMX-IGdrEeyqxIypeSASrw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_AMw5wYQ1EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_AMw5woQ1EeyY3aQztWm5BQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_e_3akIQ1EeyY3aQztWm5BQ" target="_lVAXsIQ1EeyY3aQztWm5BQ" source="_AMel4IQ1EeyY3aQztWm5BQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_e_3akYQ1EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_e_3akoQ1EeyY3aQztWm5BQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_fsDyMIQ1EeyY3aQztWm5BQ" target="_mCnEkIQ1EeyY3aQztWm5BQ" source="_AMel4IQ1EeyY3aQztWm5BQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_fsDyMYQ1EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_fsDyMoQ1EeyY3aQztWm5BQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_GOuxUIQ3EeyY3aQztWm5BQ" name="Yes" target="_DmkHIIQ1EeyY3aQztWm5BQ" source="_FwjAgIQ3EeyY3aQztWm5BQ">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_GOuxUIQ3EeyY3aQztWm5BQ" name="Yes" target="_mCnEkIQ1EeyY3aQztWm5BQ" source="_FwjAgIQ3EeyY3aQztWm5BQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_GOuxUYQ3EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_GOuxUoQ3EeyY3aQztWm5BQ" name="newScript()" content="return doesAgree;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:Data" xmi:id="_nkEqwIRKEeyY3aQztWm5BQ" name="doesAgree" dataType="_IAoOjGaLEeyNNo0v7zapHw"/>
+        <condition xmi:type="expression:Expression" xmi:id="_BdxZMYanEeyVxcz-3FgrGg" name="newScript()" content="return doesAgree;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:Data" xmi:id="_ldm14IatEeyVxcz-3FgrGg" name="doesAgree" dataType="_IAoOjGaLEeyNNo0v7zapHw"/>
         </condition>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_h9vPAIQ3EeyY3aQztWm5BQ" target="_KyyDYHoHEey7seu4rkl2KA" source="_DmkHIIQ1EeyY3aQztWm5BQ">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_h9vPAIQ3EeyY3aQztWm5BQ" target="_KyyDYHoHEey7seu4rkl2KA" source="_L3iCUIanEeyVxcz-3FgrGg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_h9vPAYQ3EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_h9vPAoQ3EeyY3aQztWm5BQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_BdxZMIanEeyVxcz-3FgrGg" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_mrWNoIQ3EeyY3aQztWm5BQ" name="No" target="_DmkHIIQ1EeyY3aQztWm5BQ" source="_lVAXsIQ1EeyY3aQztWm5BQ" isDefault="true">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_mrWNoIQ3EeyY3aQztWm5BQ" name="No" target="_mCnEkIQ1EeyY3aQztWm5BQ" source="_lVAXsIQ1EeyY3aQztWm5BQ" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_mrWNoYQ3EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_mrWNooQ3EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_BdxZMoanEeyVxcz-3FgrGg" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_JYEEUIQ4EeyY3aQztWm5BQ" name="Yes" target="_H6Ts4IQ4EeyY3aQztWm5BQ" source="_mCnEkIQ1EeyY3aQztWm5BQ">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_JYEEUIQ4EeyY3aQztWm5BQ" name="Yes" target="_AS7EwIapEeyVxcz-3FgrGg" source="_mCnEkIQ1EeyY3aQztWm5BQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_JYEEUYQ4EeyY3aQztWm5BQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_JYEEUoQ4EeyY3aQztWm5BQ" name="newScript()" content="return !nonexistentRequiredEquipmentInWarehouse.isEmpty();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
           <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bpAsIIQ4EeyY3aQztWm5BQ" name="nonexistentRequiredEquipmentInWarehouse" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
         </condition>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_LgizwIQ4EeyY3aQztWm5BQ" name="No" target="_DmkHIIQ1EeyY3aQztWm5BQ" source="_mCnEkIQ1EeyY3aQztWm5BQ" isDefault="true">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_LgizwIQ4EeyY3aQztWm5BQ" name="No" target="_mws80IaqEeyVxcz-3FgrGg" source="_mCnEkIQ1EeyY3aQztWm5BQ" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Lgja0IQ4EeyY3aQztWm5BQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_Lgja0YQ4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_BdxZM4anEeyVxcz-3FgrGg" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_evbqgIQ4EeyY3aQztWm5BQ" name="No" target="_eO6PQIYYEeymFqErNN7vkQ" source="_FwjAgIQ3EeyY3aQztWm5BQ" isDefault="true">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_evbqgIQ4EeyY3aQztWm5BQ" name="No" target="_3RTTQIaoEeyVxcz-3FgrGg" source="_FwjAgIQ3EeyY3aQztWm5BQ" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_evbqgYQ4EeyY3aQztWm5BQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_evbqgoQ4EeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
@@ -2809,10 +2526,6 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_PKtEcIRQEeyY3aQztWm5BQ" target="_FwjAgIQ3EeyY3aQztWm5BQ" source="_WwXqwIRPEeyY3aQztWm5BQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_PKtEcYRQEeyY3aQztWm5BQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_PKtEcoRQEeyY3aQztWm5BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_MrKdkIXJEeyzmqi6MScrmQ" target="_BAzIMIXJEeyzmqi6MScrmQ" source="_nCFfoIYZEeymFqErNN7vkQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_MrLEoIXJEeyzmqi6MScrmQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_MrLEoYXJEeyzmqi6MScrmQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_NYuHIIXJEeyzmqi6MScrmQ" target="_pkkWAIXCEeyzmqi6MScrmQ" source="_BAzIMIXJEeyzmqi6MScrmQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_NYuHIYXJEeyzmqi6MScrmQ"/>
@@ -2888,17 +2601,40 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Rjae8YYWEeymFqErNN7vkQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_Rjae8oYWEeymFqErNN7vkQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_SgqxYIYWEeymFqErNN7vkQ" target="_R3b54IXkEeyJUPT-qusD_A" source="_OSNz8IYWEeymFqErNN7vkQ">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_SgqxYIYWEeymFqErNN7vkQ" target="_L3iCUIanEeyVxcz-3FgrGg" source="_OSNz8IYWEeymFqErNN7vkQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_SgrYcIYWEeymFqErNN7vkQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_SgrYcYYWEeymFqErNN7vkQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_SgrYcYYWEeymFqErNN7vkQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_rW0EMIYZEeymFqErNN7vkQ" target="_nCFfoIYZEeymFqErNN7vkQ" source="_H6Ts4IQ4EeyY3aQztWm5BQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_rW0EMYYZEeymFqErNN7vkQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_rW0EMoYZEeymFqErNN7vkQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_OlyYUIanEeyVxcz-3FgrGg" target="_lVAXsIQ1EeyY3aQztWm5BQ" source="_AMX-IGdrEeyqxIypeSASrw">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_OlyYUYanEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_OlyYUoanEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_sYBCgIYZEeymFqErNN7vkQ" target="_nCFfoIYZEeymFqErNN7vkQ" source="_eO6PQIYYEeymFqErNN7vkQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_sYBCgYYZEeymFqErNN7vkQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_sYCQoIYZEeymFqErNN7vkQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_9pztcIaoEeyVxcz-3FgrGg" target="_BAzIMIXJEeyzmqi6MScrmQ" source="_H6Ts4IQ4EeyY3aQztWm5BQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_9pztcYaoEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_9pztcoaoEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_AS_9QIapEeyVxcz-3FgrGg" target="_GCHU0IasEeyVxcz-3FgrGg" source="_AS7EwIapEeyVxcz-3FgrGg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ATAkUIapEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ATAkUYapEeyVxcz-3FgrGg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_OoVEEIapEeyVxcz-3FgrGg" target="_mCnEkIQ1EeyY3aQztWm5BQ" source="_3RTTQIaoEeyVxcz-3FgrGg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_OoVEEYapEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_OoVEEoapEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_mw5xIIaqEeyVxcz-3FgrGg" name="No" target="_L3iCUIanEeyVxcz-3FgrGg" source="_mws80IaqEeyVxcz-3FgrGg" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_mw5xIYaqEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_mw5xIoaqEeyVxcz-3FgrGg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_0anIEIaqEeyVxcz-3FgrGg" name="Yes" target="_GCHU0IasEeyVxcz-3FgrGg" source="_mws80IaqEeyVxcz-3FgrGg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_0anvIIaqEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_0anvIYaqEeyVxcz-3FgrGg" name="newScript()" content="return !unavailableEquipment.isEmpty() &amp;&amp; !doesAgree;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_s7ZvEIarEeyVxcz-3FgrGg" name="unavailableEquipment" multiple="true" dataType="_IAoOlGaLEeyNNo0v7zapHw" className="com.company.model.equipment.Equipment"/>
+          <referencedElements xmi:type="process:Data" xmi:id="_s7ZvEYarEeyVxcz-3FgrGg" name="doesAgree" dataType="_IAoOjGaLEeyNNo0v7zapHw"/>
+        </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_GCOCgIasEeyVxcz-3FgrGg" target="_H6Ts4IQ4EeyY3aQztWm5BQ" source="_GCHU0IasEeyVxcz-3FgrGg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_GCOCgYasEeyVxcz-3FgrGg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_GCOCgoasEeyVxcz-3FgrGg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_MWNukGaLEeyNNo0v7zapHw" name="Employee" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_Et-9MGcgEeyUpO8SJwoypg" name="EmployeeManager"/>
@@ -3024,12 +2760,6 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_KwjWwIXkEeyJUPT-qusD_A" type="5005"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KwivsYXkEeyJUPT-qusD_A" x="2550" y="100" width="154" height="77"/>
             </children>
-            <children xmi:type="notation:Shape" xmi:id="_R3e9MIXkEeyJUPT-qusD_A" type="3003" element="_R3b54IXkEeyJUPT-qusD_A" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_R3e9MoXkEeyJUPT-qusD_A" type="5025">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_R3e9M4XkEeyJUPT-qusD_A" y="5"/>
-              </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R3e9MYXkEeyJUPT-qusD_A" x="3709" y="278"/>
-            </children>
             <children xmi:type="notation:Shape" xmi:id="_e3EZEIXkEeyJUPT-qusD_A" type="3028" element="_e3DK8IXkEeyJUPT-qusD_A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_e3EZEoXkEeyJUPT-qusD_A" type="5018"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e3EZEYXkEeyJUPT-qusD_A" x="2094" y="99" width="146" height="73"/>
@@ -3088,13 +2818,6 @@
               <styles xmi:type="notation:LineStyle" xmi:id="_pcYfM4YWEeymFqErNN7vkQ"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pcYfNIYWEeymFqErNN7vkQ" x="3605" y="161" width="151" height="82"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_AZ6VcIYYEeymFqErNN7vkQ" type="3015" element="_AZ5uYIYYEeymFqErNN7vkQ">
-              <children xmi:type="notation:DecorationNode" xmi:id="_AZ6VdYYYEeymFqErNN7vkQ" type="5010"/>
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_AZ6VcYYYEeymFqErNN7vkQ"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_AZ6VcoYYEeymFqErNN7vkQ" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_AZ6Vc4YYEeymFqErNN7vkQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZ6VdIYYEeymFqErNN7vkQ" x="3464" y="193" width="113" height="60"/>
-            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_4OdQsWc7EeyDu61EVN3I6g"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_4OdQsmc7EeyDu61EVN3I6g" fontName="Segoe UI"/>
@@ -3107,7 +2830,7 @@
           <children xmi:type="notation:DecorationNode" xmi:id="__sEcVmc8EeyDu61EVN3I6g" type="7002">
             <children xmi:type="notation:Shape" xmi:id="_AMlZgGdrEeyqxIypeSASrw" type="3005" element="_AMX-IGdrEeyqxIypeSASrw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_AMlZgmdrEeyqxIypeSASrw" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AMlZgWdrEeyqxIypeSASrw" x="245" y="154" width="159" height="80"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AMlZgWdrEeyqxIypeSASrw" x="253" y="75" width="159" height="80"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_CPI-wGd5EeyqxIypeSASrw" type="3003" element="_CPF7cGd5EeyqxIypeSASrw" fontName="Segoe UI">
               <children xmi:type="notation:DecorationNode" xmi:id="_CPI-wmd5EeyqxIypeSASrw" type="5025">
@@ -3122,18 +2845,6 @@
             <children xmi:type="notation:Shape" xmi:id="_9J5kIHoMEey7seu4rkl2KA" type="3027" element="_9J4WAHoMEey7seu4rkl2KA" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_9J5kIXoMEey7seu4rkl2KA" type="5017" element="_9J4WAHoMEey7seu4rkl2KA"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9J5kInoMEey7seu4rkl2KA" x="1896" y="156" width="150" height="75"/>
-            </children>
-            <children xmi:type="notation:Shape" xmi:id="_AMo98IQ1EeyY3aQztWm5BQ" type="3009" element="_AMel4IQ1EeyY3aQztWm5BQ" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_AMo98oQ1EeyY3aQztWm5BQ" type="5020">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_AMo984Q1EeyY3aQztWm5BQ" y="5"/>
-              </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AMo98YQ1EeyY3aQztWm5BQ" x="498" y="171"/>
-            </children>
-            <children xmi:type="notation:Shape" xmi:id="_Dml8UIQ1EeyY3aQztWm5BQ" type="3009" element="_DmkHIIQ1EeyY3aQztWm5BQ" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_DmmjYIQ1EeyY3aQztWm5BQ" type="5020">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_DmmjYYQ1EeyY3aQztWm5BQ" y="5"/>
-              </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Dml8UYQ1EeyY3aQztWm5BQ" x="1516" y="171"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_lVA-w4Q1EeyY3aQztWm5BQ" type="3008" element="_lVAXsIQ1EeyY3aQztWm5BQ" fontName="Segoe UI">
               <children xmi:type="notation:DecorationNode" xmi:id="_lVA-xYQ1EeyY3aQztWm5BQ" type="5026">
@@ -3155,32 +2866,48 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_H6U7AIQ4EeyY3aQztWm5BQ" type="3005" element="_H6Ts4IQ4EeyY3aQztWm5BQ" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_H6U7AoQ4EeyY3aQztWm5BQ" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6U7AYQ4EeyY3aQztWm5BQ" x="872" y="230" width="171" height="84"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6U7AYQ4EeyY3aQztWm5BQ" x="1182" y="242" width="171" height="84"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_D8rYsIRDEeyY3aQztWm5BQ" type="3027" element="_D8qxoIRDEeyY3aQztWm5BQ" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_D8rYsYRDEeyY3aQztWm5BQ" type="5017" element="_D8qxoIRDEeyY3aQztWm5BQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D8rYsoRDEeyY3aQztWm5BQ" x="856" y="65" width="169" height="84"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D8rYsoRDEeyY3aQztWm5BQ" x="1049" y="62" width="169" height="84"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_TRLtUIXfEeyJUPT-qusD_A" type="3005" element="_TRG00IXfEeyJUPT-qusD_A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_TRLtUoXfEeyJUPT-qusD_A" type="5005"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TRLtUYXfEeyJUPT-qusD_A" x="2091" y="284" width="152" height="76"/>
-            </children>
-            <children xmi:type="notation:Shape" xmi:id="_eO6PzIYYEeymFqErNN7vkQ" type="3005" element="_eO6PQIYYEeymFqErNN7vkQ" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_eO6PzYYYEeymFqErNN7vkQ" type="5005" element="_eO6PQIYYEeymFqErNN7vkQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eO6PzoYYEeymFqErNN7vkQ" x="1201" y="224" width="198" height="96"/>
-            </children>
-            <children xmi:type="notation:Shape" xmi:id="_nCGtwIYZEeymFqErNN7vkQ" type="3008" element="_nCFfoIYZEeymFqErNN7vkQ" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_nCGtwoYZEeymFqErNN7vkQ" type="5026">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_nCGtw4YZEeymFqErNN7vkQ" y="5"/>
-              </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nCGtwYYZEeymFqErNN7vkQ" x="1106" y="250"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_jzJXEIYcEeymFqErNN7vkQ" type="3015" element="_jzHh4IYcEeymFqErNN7vkQ">
               <children xmi:type="notation:DecorationNode" xmi:id="_jzJ-JIYcEeymFqErNN7vkQ" type="5010"/>
               <styles xmi:type="notation:DescriptionStyle" xmi:id="_jzJ-IIYcEeymFqErNN7vkQ"/>
               <styles xmi:type="notation:FontStyle" xmi:id="_jzJ-IYYcEeymFqErNN7vkQ" fontName="Segoe UI"/>
               <styles xmi:type="notation:LineStyle" xmi:id="_jzJ-IoYcEeymFqErNN7vkQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jzJ-I4YcEeymFqErNN7vkQ" x="1582" y="244"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jzJ-I4YcEeymFqErNN7vkQ" x="1582" y="244" width="114" height="61"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_L3jQcIanEeyVxcz-3FgrGg" type="3008" element="_L3iCUIanEeyVxcz-3FgrGg" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_L3jQcoanEeyVxcz-3FgrGg" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_L3jQc4anEeyVxcz-3FgrGg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L3jQcYanEeyVxcz-3FgrGg" x="1540" y="171" width="43" height="43"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_3RUhYIaoEeyVxcz-3FgrGg" type="3028" element="_3RTTQIaoEeyVxcz-3FgrGg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_3RUhYoaoEeyVxcz-3FgrGg" type="5018"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3RUhYYaoEeyVxcz-3FgrGg" x="1238" y="145" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_AS8S4IapEeyVxcz-3FgrGg" type="3028" element="_AS7EwIapEeyVxcz-3FgrGg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_AS8S4oapEeyVxcz-3FgrGg" type="5018"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AS8S4YapEeyVxcz-3FgrGg" x="892" y="253" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_mwx1UIaqEeyVxcz-3FgrGg" type="3008" element="_mws80IaqEeyVxcz-3FgrGg" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_mwx1UoaqEeyVxcz-3FgrGg" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mwx1U4aqEeyVxcz-3FgrGg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mwx1UYaqEeyVxcz-3FgrGg" x="840" y="379"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_GCIi8IasEeyVxcz-3FgrGg" type="3008" element="_GCHU0IasEeyVxcz-3FgrGg" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_GCIi8oasEeyVxcz-3FgrGg" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GCIi84asEeyVxcz-3FgrGg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GCIi8YasEeyVxcz-3FgrGg" x="1087" y="262"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="__sEcUWc8EeyDu61EVN3I6g"/>
@@ -3212,19 +2939,12 @@
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oayv4YXVEeyJUPT-qusD_A" x="559" y="253"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_mKvgkYYcEeymFqErNN7vkQ" type="3015" element="_mKvgkIYcEeymFqErNN7vkQ">
-              <children xmi:type="notation:DecorationNode" xmi:id="_mKwHoIYcEeymFqErNN7vkQ" type="5010"/>
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_mKvgkoYcEeymFqErNN7vkQ"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_mKvgk4YcEeymFqErNN7vkQ" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_mKvglIYcEeymFqErNN7vkQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mKvglYYcEeymFqErNN7vkQ" x="228" y="200" width="195" height="66"/>
-            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_sFXd8YRFEeyY3aQztWm5BQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_sFXd8oRFEeyY3aQztWm5BQ" fontName="Segoe UI"/>
           <styles xmi:type="notation:LineStyle" xmi:id="_sFXd84RFEeyY3aQztWm5BQ"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_sFXd94RFEeyY3aQztWm5BQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sFXd9IRFEeyY3aQztWm5BQ" x="23" y="1408" width="3533" height="324"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sFXd9IRFEeyY3aQztWm5BQ" x="23" y="1434" width="3840" height="417"/>
         </children>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_IAoOqGaLEeyNNo0v7zapHw"/>
@@ -3310,7 +3030,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_-E3QQXlLEey79rlFHGoMyQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_-E2pMXlLEey79rlFHGoMyQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-E2pMnlLEey79rlFHGoMyQ" points="[-81, 49, 30, -195]$[-81, 229, 30, -15]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-E2pMnlLEey79rlFHGoMyQ" points="[-78, 49, 25, -331]$[-78, 365, 25, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-E5FcHlLEey79rlFHGoMyQ" id="(1.0,0.379746835443038)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-E5FcXlLEey79rlFHGoMyQ" id="(0.3081761006289308,0.1875)"/>
     </edges>
@@ -3331,37 +3051,16 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B9HbgnoNEey7seu4rkl2KA" points="[0, -5, -84, -3]$[78, -17, -6, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B9IpoHoNEey7seu4rkl2KA" id="(1.0,0.44285714285714284)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_AMxg0IQ1EeyY3aQztWm5BQ" type="4001" element="_AMw5wIQ1EeyY3aQztWm5BQ" source="_AMlZgGdrEeyqxIypeSASrw" target="_AMo98IQ1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_AMxg04Q1EeyY3aQztWm5BQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_AMxg1IQ1EeyY3aQztWm5BQ" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_AMxg0YQ1EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AMxg0oQ1EeyY3aQztWm5BQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_e_4BoIQ1EeyY3aQztWm5BQ" type="4001" element="_e_3akIQ1EeyY3aQztWm5BQ" source="_AMo98IQ1EeyY3aQztWm5BQ" target="_lVA-w4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_e_4Bo4Q1EeyY3aQztWm5BQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_e_4BpIQ1EeyY3aQztWm5BQ" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_e_4BoYQ1EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_e_4BooQ1EeyY3aQztWm5BQ" points="[0, -21, -178, 65]$[0, -86, -178, 0]$[157, -86, -21, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_fsEZQIQ1EeyY3aQztWm5BQ" type="4001" element="_fsDyMIQ1EeyY3aQztWm5BQ" source="_AMo98IQ1EeyY3aQztWm5BQ" target="_mCnro4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_fsEZQ4Q1EeyY3aQztWm5BQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_fsEZRIQ1EeyY3aQztWm5BQ" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_fsEZQYQ1EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fsEZQoQ1EeyY3aQztWm5BQ" points="[6, 16, -184, -69]$[6, 83, -184, -2]$[171, 83, -19, -2]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_GOvYYIQ3EeyY3aQztWm5BQ" type="4001" element="_GOuxUIQ3EeyY3aQztWm5BQ" source="_FwjnkoQ3EeyY3aQztWm5BQ" target="_Dml8UIQ1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_GOvYYIQ3EeyY3aQztWm5BQ" type="4001" element="_GOuxUIQ3EeyY3aQztWm5BQ" source="_FwjnkoQ3EeyY3aQztWm5BQ" target="_mCnro4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_GOvYY4Q3EeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GOvYZIQ3EeyY3aQztWm5BQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_GOvYYYQ3EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GOvYYoQ3EeyY3aQztWm5BQ" points="[-2, -1, -102, -60]$[100, 59, 0, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GOwmgIQ3EeyY3aQztWm5BQ" id="(1.0,0.5348837209302325)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GOwmgYQ3EeyY3aQztWm5BQ" id="(0.4418604651162791,0.023255813953488372)"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GOvYYoQ3EeyY3aQztWm5BQ" points="[13, 23, 721, -137]$[13, 109, 721, -51]$[-713, 109, -5, -51]$[-713, 154, -5, -6]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GOwmgIQ3EeyY3aQztWm5BQ" id="(0.18604651162790697,0.46511627906976744)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K6qfgIapEeyVxcz-3FgrGg" id="(0.6046511627906976,0.13953488372093023)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_h9v2EIQ3EeyY3aQztWm5BQ" type="4001" element="_h9vPAIQ3EeyY3aQztWm5BQ" source="_Dml8UIQ1EeyY3aQztWm5BQ" target="_Ky70YHoHEey7seu4rkl2KA" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_h9v2EIQ3EeyY3aQztWm5BQ" type="4001" element="_h9vPAIQ3EeyY3aQztWm5BQ" source="_L3jQcIanEeyVxcz-3FgrGg" target="_Ky70YHoHEey7seu4rkl2KA" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_h9v2E4Q3EeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_h9v2FIQ3EeyY3aQztWm5BQ" y="-10"/>
       </children>
@@ -3370,56 +3069,56 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9xEMIQ3EeyY3aQztWm5BQ" id="(1.0,0.5116279069767442)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h9xEMYQ3EeyY3aQztWm5BQ" id="(0.1232876712328767,0.4794520547945205)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_mrafEIQ3EeyY3aQztWm5BQ" type="4001" element="_mrWNoIQ3EeyY3aQztWm5BQ" source="_lVA-w4Q1EeyY3aQztWm5BQ" target="_Dml8UIQ1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_mrafEIQ3EeyY3aQztWm5BQ" type="4001" element="_mrWNoIQ3EeyY3aQztWm5BQ" source="_lVA-w4Q1EeyY3aQztWm5BQ" target="_mCnro4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_mrafE4Q3EeyY3aQztWm5BQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_mrafFIQ3EeyY3aQztWm5BQ" y="-10"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mrafFIQ3EeyY3aQztWm5BQ" x="-30" y="22"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_mrafEYQ3EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mrafEoQ3EeyY3aQztWm5BQ" points="[-22, 15, -827, -63]$[-22, 79, -827, 1]$[797, 79, -8, 1]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mrafEoQ3EeyY3aQztWm5BQ" points="[-22, 15, -5, -129]$[-22, 143, -5, -1]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mrbtMIQ3EeyY3aQztWm5BQ" id="(1.0,0.6511627906976745)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mrbtMYQ3EeyY3aQztWm5BQ" id="(0.18604651162790697,0.46511627906976744)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mrbtMYQ3EeyY3aQztWm5BQ" id="(0.6046511627906976,0.023255813953488372)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_JYErYIQ4EeyY3aQztWm5BQ" type="4001" element="_JYEEUIQ4EeyY3aQztWm5BQ" source="_mCnro4Q1EeyY3aQztWm5BQ" target="_H6U7AIQ4EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_JYErYIQ4EeyY3aQztWm5BQ" type="4001" element="_JYEEUIQ4EeyY3aQztWm5BQ" source="_mCnro4Q1EeyY3aQztWm5BQ" target="_AS8S4IapEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_JYFScIQ4EeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JYFScYQ4EeyY3aQztWm5BQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_JYErYYQ4EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JYErYoQ4EeyY3aQztWm5BQ" points="[0, -1, -157, 9]$[153, -1, -4, 9]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JYErYoQ4EeyY3aQztWm5BQ" points="[0, -1, -279, -1]$[272, -1, -7, -1]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JYGgkIQ4EeyY3aQztWm5BQ" id="(1.0,0.5116279069767442)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JYGgkYQ4EeyY3aQztWm5BQ" id="(0.028985507246376812,0.463768115942029)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2F5aoIapEeyVxcz-3FgrGg" id="(0.07,0.44)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_LgmeIIQ4EeyY3aQztWm5BQ" type="4001" element="_LgizwIQ4EeyY3aQztWm5BQ" source="_mCnro4Q1EeyY3aQztWm5BQ" target="_Dml8UIQ1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_LgmeIIQ4EeyY3aQztWm5BQ" type="4001" element="_LgizwIQ4EeyY3aQztWm5BQ" source="_mCnro4Q1EeyY3aQztWm5BQ" target="_mwx1UIaqEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_LgnFMIQ4EeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_LgnFMYQ4EeyY3aQztWm5BQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_LgmeIYQ4EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LgmeIoQ4EeyY3aQztWm5BQ" points="[-22, 15, -840, 107]$[-22, 114, -840, 206]$[818, 114, 0, 206]$[818, -70, 0, 22]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LgmeIoQ4EeyY3aQztWm5BQ" points="[-22, 15, -164, -101]$[-22, 114, -164, -2]$[123, 114, -19, -2]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LgoTUIQ4EeyY3aQztWm5BQ" id="(1.0,0.6511627906976745)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_evf78IQ4EeyY3aQztWm5BQ" type="4001" element="_evbqgIQ4EeyY3aQztWm5BQ" source="_FwjnkoQ3EeyY3aQztWm5BQ" target="_eO6PzIYYEeymFqErNN7vkQ" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_evf78IQ4EeyY3aQztWm5BQ" type="4001" element="_evbqgIQ4EeyY3aQztWm5BQ" source="_FwjnkoQ3EeyY3aQztWm5BQ" target="_3RUhYIaoEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_evf784Q4EeyY3aQztWm5BQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_evf79IQ4EeyY3aQztWm5BQ" y="-10"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_evf79IQ4EeyY3aQztWm5BQ" x="18" y="13"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_evf78YQ4EeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_evf78oQ4EeyY3aQztWm5BQ" points="[-20, 18, 110, -106]$[-20, 166, 110, 42]$[-46, 166, 84, 42]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_evf78oQ4EeyY3aQztWm5BQ" points="[-22, 20, 81, -72]$[-22, 68, 81, -24]$[-87, 68, 16, -24]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_evhKEIQ4EeyY3aQztWm5BQ" id="(1.0,0.5348837209302325)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_evhKEYQ4EeyY3aQztWm5BQ" id="(0.5792349726775956,0.056179775280898875)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_evhKEYQ4EeyY3aQztWm5BQ" id="(0.87,0.88)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_GvHEEIRDEeyY3aQztWm5BQ" type="4001" element="_GvBkgIRDEeyY3aQztWm5BQ" source="_lVA-w4Q1EeyY3aQztWm5BQ" target="_D8rYsIRDEeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_GvHrIIRDEeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GvHrIYRDEeyY3aQztWm5BQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_GvHEEYRDEeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GvHEEoRDEeyY3aQztWm5BQ" points="[0, -5, -132, 7]$[113, -5, -19, 7]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GvHEEoRDEeyY3aQztWm5BQ" points="[0, -5, -360, 26]$[330, -5, -30, 26]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GvI5QIRDEeyY3aQztWm5BQ" id="(1.0,0.6046511627906976)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GvI5QYRDEeyY3aQztWm5BQ" id="(0.11333333333333333,0.41333333333333333)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iewYwIalEeyVxcz-3FgrGg" id="(0.17751479289940827,0.21428571428571427)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_OjsHw4RQEeyY3aQztWm5BQ" type="4001" element="_OjsHwIRQEeyY3aQztWm5BQ" source="_D8rYsIRDEeyY3aQztWm5BQ" target="_WwY44IRPEeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_Ojsu0oRQEeyY3aQztWm5BQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Ojsu04RQEeyY3aQztWm5BQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_Ojsu0IRQEeyY3aQztWm5BQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ojsu0YRQEeyY3aQztWm5BQ" points="[0, 0, -329, 866]$[244, 0, -85, 866]$[244, -856, -85, 10]$[301, -856, -28, 10]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ojsu0YRQEeyY3aQztWm5BQ" points="[0, 15, -136, 892]$[59, 15, -77, 892]$[59, -878, -77, -1]$[108, -878, -28, -1]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ojt88IRQEeyY3aQztWm5BQ" id="(1.0,0.2857142857142857)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ojt88YRQEeyY3aQztWm5BQ" id="(0.15384615384615385,0.5054945054945055)"/>
     </edges>
@@ -3430,15 +3129,6 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_PKtrgYRQEeyY3aQztWm5BQ" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PKtrgoRQEeyY3aQztWm5BQ" points="[-87, 66, -2, -694]$[-87, 741, -2, -19]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PKuSkIRQEeyY3aQztWm5BQ" id="(1.0,0.27472527472527475)"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_MrMSwIXJEeyzmqi6MScrmQ" type="4001" element="_MrKdkIXJEeyzmqi6MScrmQ" source="_nCGtwIYZEeymFqErNN7vkQ" target="_BA09YIXJEeyzmqi6MScrmQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_MrM50IXJEeyzmqi6MScrmQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_MrM50YXJEeyzmqi6MScrmQ" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_MrMSwYXJEeyzmqi6MScrmQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MrMSwoXJEeyzmqi6MScrmQ" points="[-7, 7, 801, -279]$[-7, 152, 801, -134]$[-809, 152, -1, -134]$[-809, 279, -1, -7]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MrOvAIXJEeyzmqi6MScrmQ" id="(0.627906976744186,0.7906976744186046)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MrOvAYXJEeyzmqi6MScrmQ" id="(0.5256410256410257,0.08974358974358974)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_NYuuMIXJEeyzmqi6MScrmQ" type="4001" element="_NYuHIIXJEeyzmqi6MScrmQ" source="_BA09YIXJEeyzmqi6MScrmQ" target="_pkvVIIXCEeyzmqi6MScrmQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_NYuuM4XJEeyzmqi6MScrmQ" type="6001">
@@ -3574,30 +3264,70 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RjcUIIYWEeymFqErNN7vkQ" id="(1.0,0.32142857142857145)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RjcUIYYWEeymFqErNN7vkQ" id="(0.047337278106508875,0.42857142857142855)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_SgrYcoYWEeymFqErNN7vkQ" type="4001" element="_SgqxYIYWEeymFqErNN7vkQ" source="_OSN0JoYWEeymFqErNN7vkQ" target="_R3e9MIXkEeyJUPT-qusD_A" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_SgrYcoYWEeymFqErNN7vkQ" type="4001" element="_SgqxYIYWEeymFqErNN7vkQ" source="_OSN0JoYWEeymFqErNN7vkQ" target="_L3jQcIanEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_SgrYdYYWEeymFqErNN7vkQ" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Sgr_gIYWEeymFqErNN7vkQ" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_SgrYc4YWEeymFqErNN7vkQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SgrYdIYWEeymFqErNN7vkQ" points="[0, 0, -96, -14]$[94, -1, -2, -15]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SgrYdIYWEeymFqErNN7vkQ" points="[-85, 55, 1977, -242]$[-85, 193, 1977, -104]$[-2056, 193, 6, -104]$[-2056, 289, 6, -8]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SgtNoIYWEeymFqErNN7vkQ" id="(1.0,0.34523809523809523)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gl4nQIbUEeyAhs8m0ZO3rQ" id="(0.3488372093023256,0.18604651162790697)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_rW0rQIYZEeymFqErNN7vkQ" type="4001" element="_rW0EMIYZEeymFqErNN7vkQ" source="_H6U7AIQ4EeyY3aQztWm5BQ" target="_nCGtwIYZEeymFqErNN7vkQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_rW0rQ4YZEeymFqErNN7vkQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_rW0rRIYZEeymFqErNN7vkQ" y="-10"/>
+    <edges xmi:type="notation:Connector" xmi:id="_OlyYU4anEeyVxcz-3FgrGg" type="4001" element="_OlyYUIanEeyVxcz-3FgrGg" source="_AMlZgGdrEeyqxIypeSASrw" target="_lVA-w4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Oly_YIanEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Oly_YYanEeyVxcz-3FgrGg" y="-10"/>
       </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_rW0rQYYZEeymFqErNN7vkQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rW0rQoYZEeymFqErNN7vkQ" points="[0, 10, -84, 0]$[63, 10, -21, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rW15YIYZEeymFqErNN7vkQ" id="(1.0,0.36904761904761907)"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_OlyYVIanEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OlyYVYanEeyVxcz-3FgrGg" points="[0, 0, -293, 76]$[284, -88, -9, -12]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ol0NgIanEeyVxcz-3FgrGg" id="(1.0,0.35)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_sYCQoYYZEeymFqErNN7vkQ" type="4001" element="_sYBCgIYZEeymFqErNN7vkQ" source="_eO6PzIYYEeymFqErNN7vkQ" target="_nCGtwIYZEeymFqErNN7vkQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_sYCQpIYZEeymFqErNN7vkQ" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_sYCQpYYZEeymFqErNN7vkQ" y="-10"/>
+    <edges xmi:type="notation:Connector" xmi:id="_9p0UgIaoEeyVxcz-3FgrGg" type="4001" element="_9pztcIaoEeyVxcz-3FgrGg" source="_H6U7AIQ4EeyY3aQztWm5BQ" target="_BA09YIXJEeyzmqi6MScrmQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9p0Ug4aoEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9p0UhIaoEeyVxcz-3FgrGg" y="-10"/>
       </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_sYCQooYZEeymFqErNN7vkQ" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sYCQo4YZEeymFqErNN7vkQ" points="[-198, 19, 58, -6]$[-257, 24, -1, -1]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sYC3sIYZEeymFqErNN7vkQ" id="(1.0,0.3020833333333333)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sYC3sYYZEeymFqErNN7vkQ" id="(0.8604651162790697,0.6511627906976745)"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9p0UgYaoEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9p0UgoaoEeyVxcz-3FgrGg" points="[-95, 56, 924, -237]$[-95, 261, 924, -32]$[-1026, 261, -7, -32]$[-1026, 293, -7, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9p1ioIaoEeyVxcz-3FgrGg" id="(1.0,0.3333333333333333)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9p1ioYaoEeyVxcz-3FgrGg" id="(0.5833333333333334,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ATAkUoapEeyVxcz-3FgrGg" type="4001" element="_AS_9QIapEeyVxcz-3FgrGg" source="_AS8S4IapEeyVxcz-3FgrGg" target="_GCIi8IasEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ATAkVYapEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ATAkVoapEeyVxcz-3FgrGg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ATAkU4apEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ATAkVIapEeyVxcz-3FgrGg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_OoVrIIapEeyVxcz-3FgrGg" type="4001" element="_OoVEEIapEeyVxcz-3FgrGg" source="_3RUhYIaoEeyVxcz-3FgrGg" target="_mCnro4Q1EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_OoVrI4apEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OoVrJIapEeyVxcz-3FgrGg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_OoVrIYapEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OoVrIoapEeyVxcz-3FgrGg" points="[-120, 0, 533, -84]$[-661, 0, -8, -84]$[-661, 75, -8, -9]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OoW5QIapEeyVxcz-3FgrGg" id="(1.0,0.6)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OoW5QYapEeyVxcz-3FgrGg" id="(0.6744186046511628,0.20930232558139536)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_mw6YMIaqEeyVxcz-3FgrGg" type="4001" element="_mw5xIIaqEeyVxcz-3FgrGg" source="_mwx1UIaqEeyVxcz-3FgrGg" target="_L3jQcIanEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_mw6YM4aqEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mw6YNIaqEeyVxcz-3FgrGg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mw6YMYaqEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mw6YMoaqEeyVxcz-3FgrGg" points="[22, 0, -678, 208]$[700, 0, 0, 208]$[700, -186, 0, 22]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_0arZgIaqEeyVxcz-3FgrGg" type="4001" element="_0anIEIaqEeyVxcz-3FgrGg" source="_mwx1UIaqEeyVxcz-3FgrGg" target="_GCIi8IasEeyVxcz-3FgrGg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0asAkIaqEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0asAkYaqEeyVxcz-3FgrGg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_0arZgYaqEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0arZgoaqEeyVxcz-3FgrGg" points="[-23, -26, -251, 78]$[-23, -65, -251, 39]$[228, -65, 0, 39]$[228, -104, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0atOsIaqEeyVxcz-3FgrGg" id="(1.0,0.627906976744186)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0atOsYaqEeyVxcz-3FgrGg" id="(0.5581395348837209,0.9302325581395349)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_GCOpkIasEeyVxcz-3FgrGg" type="4001" element="_GCOCgIasEeyVxcz-3FgrGg" source="_GCIi8IasEeyVxcz-3FgrGg" target="_H6U7AIQ4EeyY3aQztWm5BQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GCPQoIasEeyVxcz-3FgrGg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GCPQoYasEeyVxcz-3FgrGg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GCOpkYasEeyVxcz-3FgrGg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GCOpkoasEeyVxcz-3FgrGg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
