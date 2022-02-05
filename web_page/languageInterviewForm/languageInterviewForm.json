@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "languageInterviewForm",
   "name" : "languageInterviewForm",
-  "lastUpdate" : 1640637785344,
+  "lastUpdate" : 1644070651262,
   "rows" : [
     [
       {
@@ -612,164 +612,80 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Cv"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
                         "type" : {
                           "type" : "constant",
-                          "value" : "text"
+                          "value" : "Process document"
                         },
-                        "dimension" : {
+                        "url" : {
                           "type" : "constant",
-                          "value" : 12
+                          "value" : ""
                         },
-                        "value" : {
+                        "document" : {
                           "type" : "variable",
-                          "value" : "jobApplication.cv"
+                          "value" : "context.cvDocument_ref"
                         },
-                        "required" : {
+                        "showPreview" : {
                           "type" : "constant",
                           "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "a17ce633-ea26-4b6b-9bef-7beea11c219f",
+                      "reference" : "01c7255b-4bb8-417b-ad0f-501d60ca99e9",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbFileViewer"
                     }
                   ],
                   [
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Letter"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
                         "type" : {
                           "type" : "constant",
-                          "value" : "text"
+                          "value" : "Process document"
                         },
-                        "dimension" : {
+                        "url" : {
                           "type" : "constant",
-                          "value" : 12
+                          "value" : ""
                         },
-                        "value" : {
+                        "document" : {
                           "type" : "variable",
-                          "value" : "jobApplication.letter"
+                          "value" : "context.letterDocument_ref"
                         },
-                        "required" : {
+                        "showPreview" : {
                           "type" : "constant",
                           "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "f8b14a63-f9b3-4873-8622-cbe1ad673465",
+                      "reference" : "3ab81eaf-95ca-457d-9fc7-834708927b18",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbFileViewer"
                     }
                   ],
                   [
