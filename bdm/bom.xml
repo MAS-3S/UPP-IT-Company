@@ -107,6 +107,17 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.equipment.PurchaseOrder">
+            <fields>
+                <field type="DOUBLE" length="255" name="totalPrice" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="orderDate" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isSignedByProcurementManager" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isSignedByEmployeeManager" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.equipment.Warehouse">
             <fields>
                 <relationField type="AGGREGATION" reference="com.company.model.equipment.WarehouseEquipment" fetchType="LAZY" name="equipments" nullable="true" collection="true"/>
